@@ -1,0 +1,150 @@
+\thusetup{
+  %******************************
+  % 注意：
+  %   1. 配置里面不要出现空行
+  %   2. 不需要的配置信息可以删除
+  %******************************
+  %
+  %=====
+  % 秘级
+  %=====
+  secretlevel={秘密},
+  secretyear={10},
+  %
+  %=========
+  % 中文信息
+  %=========
+  ctitle={数据中心网络中的应用速率和延迟优化},
+  cdegree={工学博士},
+  cdepartment={计算机科学与技术系},
+  cmajor={计算机科学与技术},
+  cauthor={张晗},
+  csupervisor={尹霞教授},
+  %cassosupervisor={陈文光教授}, % 副指导老师
+  %ccosupervisor={某某某教授}, % 联合指导老师
+  % 日期自动使用当前时间，若需指定按如下方式修改：
+  % cdate={超新星纪元},
+  %
+  % 博士后专有部分
+%  cfirstdiscipline={计算机科学与技术},
+%  cseconddiscipline={系统结构},
+%  postdoctordate={2009年7月——2011年7月},
+%  id={编号}, % 可以留空： id={},
+%  udc={UDC}, % 可以留空
+%  catalognumber={分类号}, % 可以留空
+  %
+  %=========
+  % 英文信息
+  %=========
+  etitle={Throughput and latency optimization for applications in data center networks},
+  % 这块比较复杂，需要分情况讨论：
+  % 1. 学术型硕士
+  %    edegree：必须为Master of Arts或Master of Science（注意大小写）
+  %             “哲学、文学、历史学、法学、教育学、艺术学门类，公共管理学科
+  %              填写Master of Arts，其它填写Master of Science”
+  %    emajor：“获得一级学科授权的学科填写一级学科名称，其它填写二级学科名称”
+  % 2. 专业型硕士
+  %    edegree：“填写专业学位英文名称全称”
+  %    emajor：“工程硕士填写工程领域，其它专业学位不填写此项”
+  % 3. 学术型博士
+  %    edegree：Doctor of Philosophy（注意大小写）
+  %    emajor：“获得一级学科授权的学科填写一级学科名称，其它填写二级学科名称”
+  % 4. 专业型博士
+  %    edegree：“填写专业学位英文名称全称”
+  %    emajor：不填写此项
+  edegree={Doctor of Engineering},
+  emajor={Computer Science and Technology},
+  eauthor={Han Zhang},
+  esupervisor={Professor Xia Yin},
+  % 日期自动生成，若需指定按如下方式修改：
+  % edate={December, 2005}
+  %
+  % 关键词用“英文逗号”分割
+  ckeywords={数据中心, 网络, 应用, 延迟, 带宽},
+  ekeywords={Date Center,network,application,latency,throughput}
+}
+
+% 定义中英文摘要和关键字
+\begin{cabstract}
+在过去的几年中，越来越多的企业有了自己的数据中心，还出现了比如Amazon，微软和谷歌这类数据中心服务提供商。
+在数据中心如何使用廉价，常见的网络设备来给数据中心应用提供低延迟，高带宽服务是十分重要的问题。
+TCP是Internet中应用最多的传输协议。
+尽管TCP被广泛的应用在数据中心，但是在数据中心中使用TCP存在以下问题：
+（1）TCP使用基于丢包的拥塞控制方法，当网络中出现拥塞时，发送端发送速率震荡大，网络利用率低。
+（2）交换机的队列长，排队延迟高。
+（3）应用的数据流均分网络带宽，不能满足不同应用对带宽和延迟不同的需求。
+（4）TCP是数据流级别的传输，难以满足数据中心任务级别传输要求。
+
+因此，需要对数据中心应用传输同时做流级别和任务级别的传输优化。
+对流级别和任务级别的传输，应同时兼顾网络拥塞和应用语义特征。
+基于此，本文从流和任务级别对数据中心传输做出优化，主要研究内容和贡献如下：
+
+
+（1）提出了数据中心传输模型，具体包括了基于ECN的流传输模型和任务级别传输优化模型。
+通过基于ECN的流传输模型，可以推算出基于ECN流传输协议的参数设置区间。
+针对数据中心任务传输，本文提出理想化权重流组完成时间优化 (Idealized Weighted Coflow Completion Time Minimization,简称 IWCCTM) 问题，
+针对IWCCTM问题，本文提出2-近似离线算法解决此问题。
+
+
+（2）针对流级别的优化，本文提出了期限自适应的流传输策略－LPD和基于流传输时间的的速率控制机制－FDRC。
+LPD和FDRC都遵循“越拥塞，越区分”的设计原则。
+因此即使在重度网络负载情形下，LPD和FDRC依然可以根据应用的紧急程度和网络拥塞对传输进行优化。
+同时，错失期限的流数目和流完成时间也得到充分优化。
+    
+（3）针对任务级别的优化，本文提出基于流信息的调度策略D-Target和基于任务重要性和网络拥塞调度策略Yosemite。
+其中D-Target在可以在预先得知流信息的前提下，同时结合纠删码存储系统的源选择问题，优化文件平均存取时间。
+Yosemite可以不预先知道流信息的前提下，优化了任务传输时间。
+
+（4）设计并且实现了传输优化系统FlyTransfer，并在OpenStack和小型数据中心下部署和测试FlyTransfer。
+实验发现，FlyTransfer可以同时进行流级别和任务级别的优化。
+本文最后对FlyTransfer进行性能评估。
+  
+\end{cabstract}
+
+% 如果习惯关键字跟在摘要文字后面，可以用直接命令来设置，如下：
+% \ckeywords{\TeX, \LaTeX, CJK, 模板, 论文}
+\begin{eabstract}
+In the past few years, more and more companies have their own data centers.
+Some companies such as Amazon, Microsoft, and Google even provide data center service. 
+In this case, how to use cheap, common network devices to provide low-latency, high-bandwidth services to the applications of data center is an important problem. TCP is the most widely used transport protocol in the Internet. 
+Although TCP is widely used in the data center, 
+the traditional TCP transport protocol has following problems:
+ (1) TCP's congestion window will be halved when there is congestion in the network
+ and this will lead the network utility at low level.
+ (2)Queue delay of TCP is too long to satisfy the latency demands of applications. 
+ (3) TCP is a fair allocation method and fair allocation can not meet the demands of applications on bandwidth and latency. 
+ (4) TCP can not meet the requirements of task level transmission.
+ 
+As a result, it is necessary to optimize the transport of applications from flow level and task level.
+Also, the different bandwidth and latency demands of applications should also be taken into consideration.
+Based on these, we make the following contributions in this paper:
+ 
+(1) We propose flow transfer model and task optimization model. 
+With the ECN-based flow level model, parameters of rate control methods can be analyzed.
+Based on the task-level model, we purpose Idealized Weighted Coflow Completion Time Minimization(IWCCTM) problem.
+To solve IWCCTM problem, we propose a 2-approximate optimal method to solve.
+  
+(2) For the optimization of flow level, 
+we propose the load adaption protocol-LPD and the flow duration time rate control protocol-FDRC.
+Both LPD and FDRC follow the principle "more load, more differentiation".
+As a result, even under heavy load, 
+the percentage of flows missing deadline as well as flow completion time can also be optimized.
+ 
+ 
+(3) For the optimization of task level,
+we propose the centralized schedule methods D-Target and Yosemite.
+With the information of flows, D-Target can reduce the average task completion time.
+In this paper, we use the erasure coding storage system to prove this.
+Yosemite makes an advance, it can optimize the transfer of tasks without the knowledge of flows.  
+ 
+ 
+
+(4) We design and evaluate FlyTransfer, a system that can schedule the transfer of flows as well as tasks. 
+We deploy FlyTransfer at the platform of openstack and a small data center.
+Evaluations show that FlyTransfer can optimize the transfer of tasks and flows with small overheads.
+We also test the overhead of FlyTransfer in this paper.
+  
+  
+\end{eabstract}
+
+% \ekeywords{\TeX, \LaTeX, CJK, template, thesis}

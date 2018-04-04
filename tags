@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BIBFILE	Makefile	/^BIBFILE=ref\/*.bib$/;"	m
+BSTFILE	Makefile	/^BSTFILE=*.bst$/;"	m
+CLSFILES	Makefile	/^CLSFILES=dtx-style.sty $(PACKAGE).cls $(PACKAGE).cfg$/;"	m
+FIGURES	Makefile	/^FIGURES=$(wildcard figures\/*.eps figures\/*.pdf)$/;"	m
+Integer Programming	data/appendix01.tex	/^\\subsection{Integer Programming}$/;"	b
+LATEXMKOPTS	Makefile	/^LATEXMKOPTS = -xelatex -halt-on-error -interaction=nonstopmode$/;"	m
+Linear Programming	data/appendix01.tex	/^\\subsection{Linear Programming}$/;"	b
+METHOD	Makefile	/^METHOD = latexmk$/;"	m
+Nonlinear Programming	data/appendix01.tex	/^\\subsection{Nonlinear Programming}$/;"	b
+OPEN	Makefile	/^	OPEN = open$/;"	m
+OPEN	Makefile	/^	OPEN = start$/;"	m
+PACKAGE	Makefile	/^PACKAGE=thuthesis$/;"	m
+RM	Makefile	/^	RM = del \/Q$/;"	m
+RM	Makefile	/^	RM = rm -f$/;"	m
+References	data/appendix01.tex	/^\\section*{References}$/;"	s
+SHUJICONTENTS	Makefile	/^SHUJICONTENTS=$(SHUJIMAIN).tex$/;"	m
+SHUJIMAIN	Makefile	/^SHUJIMAIN = shuji$/;"	m
+SOURCES	Makefile	/^SOURCES=$(PACKAGE).ins $(PACKAGE).dtx$/;"	m
+Single Objective Programming	data/appendix01.tex	/^\\section{Single-Objective Programming}$/;"	s
+THESISCONTENTS	Makefile	/^THESISCONTENTS=$(THESISMAIN).tex data\/*.tex $(FIGURES)$/;"	m
+THESISMAIN	Makefile	/^THESISMAIN = main$/;"	m
+check_notification	gulpfile.js	/^function check_notification() {$/;"	f
+const.template	gulpfile.js	/^    template: {$/;"	p
+ersion	Makefile	/^		echo "Usage: make dist version=[x.y.z | ctan]"; \\$/;"	m
+usage	gulpfile.js	/^function usage() {$/;"	f

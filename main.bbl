@@ -1,0 +1,516 @@
+\begin{thebibliography}{76}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\providecommand{\href}[2]{\url{#2}}
+\providecommand{\doi}[1]{DOI: \href{http://dx.doi.org/#1}{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
+  \urlstyle{same}\fi
+
+\bibitem[房秉毅\ 等(2010)房秉毅, 张云勇, 程莹, and
+  徐雷]{fang-cloud}
+房秉毅, 张云勇, 程莹, 等.
+\newblock 云计算国内外发展现状分析\allowbreak[J].
+\newblock 电信科学, 2010\penalty0 (S1): 1--6.
+
+\bibitem[吴小芳(2017)]{wu-datacenter}
+吴小芳.
+\newblock 数据中心发展趋势探讨\allowbreak[J].
+\newblock 中国新通信, 2017, 19\penalty0 (1): 19--21.
+
+\bibitem[魏祥麟\ 等(2013)魏祥麟, 陈鸣, 范建华, 张国敏, and
+  卢紫毅]{wei-dc}
+魏祥麟, 陈鸣, 范建华, 等.
+\newblock 数据中心网络的体系结构\allowbreak[J].
+\newblock 软件学报, 2013\penalty0 (2): 295--316.
+
+\bibitem[Latency(2009)]{Latency}
+Latency.
+\newblock Latency is everywhere and it costs you sales - how to crush
+  it\allowbreak[EB/OL].
+\newblock 2009.
+\newblock
+  \url{http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it}.
+
+\bibitem[Dean\ et~al.(2004)Dean and Ghemawat]{Dean2004Simplified}
+Dean J, Ghemawat S.
+\newblock Simplified data processing on large clusters\allowbreak[J].
+\newblock In Proceedings of Operating Systems Design and Implementation (OSDI,
+  2004, 51\penalty0 (1): 107--113.
+
+\bibitem[Chowdhury\ et~al.(2011)Chowdhury, Zaharia, Ma, Jordan, and
+  Stoica]{Chowdhury2011Managing}
+Chowdhury M, Zaharia M, Ma J, et~al.
+\newblock Managing data transfers in computer clusters with
+  orchestra\allowbreak[J].
+\newblock Acm Sigcomm Computer Communication Review, 2011, 41\penalty0 (4):
+  98--109.
+
+\bibitem[Olston\ et~al.(2008)Olston, Reed, Srivastava, Kumar, and
+  Tomkins]{Olston2008Pig}
+Olston C, Reed B, Srivastava U, et~al.
+\newblock Pig latin:a not-so-foreign language for data
+  processing\allowbreak[C]//\allowbreak{}ACM SIGMOD International Conference on
+  Management of Data.
+\newblock 2008: 1099--1110.
+
+\bibitem[Isard\ et~al.(2007)Isard, Budiu, Yu, Birrell, and
+  Fetterly]{Isard2007Dryad}
+Isard M, Budiu M, Yu Y, et~al.
+\newblock Dryad:distributed data-parallel programs from sequential building
+  blocks\allowbreak[J].
+\newblock ACM SIGOPS Operating Systems Review, 2007, 41\penalty0 (3): 59--72.
+
+\bibitem[Yu\ et~al.(2008)Yu, Isard, Fetterly, Budiu, Erlingsson, lfar, Gunda,
+  and Currey]{Yu2008DryadLINQ}
+Yu Y, Isard M, Fetterly D, et~al.
+\newblock Dryadlinq: a system for general-purpose distributed data-parallel
+  computing using a high-level language\allowbreak[C]//\allowbreak{}Usenix
+  Symposium on Operating Systems Design and Implementation, OSDI 2008, December
+  8-10, 2008, San Diego, California, Usa, Proceedings.
+\newblock 2008: 1--14.
+
+\bibitem[Chaiken\ et~al.(2008)Chaiken, Jenkins, Ramsey, Shakib, Weaver, and
+  Zhou]{Chaiken2008SCOPE}
+Chaiken R, Jenkins B, Ramsey B, et~al.
+\newblock Scope: easy and efficient parallel processing of massive data
+  sets\allowbreak[J].
+\newblock Proceedings of the Vldb Endowment, 2008, 1\penalty0 (2): 1265--1276.
+
+\bibitem[Chambers\ et~al.(2010)Chambers, Raniwala, Perry, Adams, Henry,
+  Bradshaw, and Weizenbaum]{Chambers2010FlumeJava}
+Chambers C, Raniwala A, Perry F, et~al.
+\newblock Flumejava: easy, efficient data-parallel pipelines\allowbreak[J].
+\newblock Acm Sigplan Notices, 2010, 45\penalty0 (6): 363--375.
+
+\bibitem[Guo\ et~al.(2015)Guo, Fan, Chen, Zhang, Zhou, Mcdirmid, Liu, Lin,
+  Zhou, and Zhou]{Guo2015Spotting}
+Guo Z, Fan X, Chen R, et~al.
+\newblock Spotting code optimizations in data-parallel pipelines through
+  periscope\allowbreak[J].
+\newblock IEEE Transactions on Parallel and Distributed Systems, 2015,
+  26\penalty0 (6): 1718--1731.
+
+\bibitem[Zhang\ et~al.(2012)Zhang, Zhou, Chen, Fan, Guo, Lin, Li, Lin, Zhou,
+  and Zhou]{Zhang2012Optimizing}
+Zhang J, Zhou H, Chen R, et~al.
+\newblock Optimizing data shuffling in data-parallel computation by
+  understanding user-defined functions\allowbreak[J].
+\newblock Functions Jiaxing, 2012: 22--22.
+
+\bibitem[Zaharia\ et~al.(2012)Zaharia, Chowdhury, Das, Dave, Ma, Mccauley,
+  Franklin, Shenker, and Stoica]{Zaharia2012Resilient}
+Zaharia M, Chowdhury M, Das T, et~al.
+\newblock Resilient distributed datasets: a fault-tolerant abstraction for
+  in-memory cluster computing\allowbreak[C]//\allowbreak{}Usenix Conference on
+  Networked Systems Design and Implementation.
+\newblock 2012: 2--2.
+
+\bibitem[Malewicz\ et~al.(2010)Malewicz, Austern, Bik, Dehnert, Horn, Leiser,
+  and Czajkowski]{Malewicz2010Pregel}
+Malewicz G, Austern M~H, Bik A~J~C, et~al.
+\newblock Pregel: a system for large-scale graph
+  processing\allowbreak[C]//\allowbreak{}ACM SIGMOD International Conference on
+  Management of Data.
+\newblock 2010: 135--146.
+
+\bibitem[Alizadeh\ et~al.(2010)Alizadeh, Greenberg, Maltz, Padhye, Patel,
+  Prabhakar, Sengupta, and Sridharan]{DCTCP}
+Alizadeh M, Greenberg A, Maltz D~A, et~al.
+\newblock Data center tcp (dctcp)\allowbreak[C]//\allowbreak{}2010: 63--74.
+
+\bibitem[Kohavi\ et~al.(2009)Kohavi, Longbotham, Sommerfield, and
+  Henne]{kohavi2009controlled}
+Kohavi R, Longbotham R, Sommerfield D, et~al.
+\newblock Controlled experiments on the web: survey and practical
+  guide\allowbreak[J].
+\newblock Data mining and knowledge discovery, 2009, 18\penalty0 (1): 140--181.
+
+\bibitem[Decandia\ et~al.(2007)Decandia, Hastorun, Jampani, Kakulapati,
+  Lakshman, Pilchin, Sivasubramanian, Vosshall, and Vogels]{Decandia2007Dynamo}
+Decandia G, Hastorun D, Jampani M, et~al.
+\newblock Dynamo: amazon's highly available key-value
+  store\allowbreak[C]//\allowbreak{}ACM Sigops Symposium on Operating Systems
+  Principles.
+\newblock 2007: 205--220.
+
+\bibitem[Renesse\ et~al.(2002)Renesse, Birman, Dan, and
+  Vogels]{Renesse2002Scalable}
+Renesse R~V, Birman K~P, Dan D, et~al.
+\newblock Scalable management and data mining using
+  astrolabe\allowbreak[C]//\allowbreak{}Revised Papers from the First
+  International Workshop on Peer-to-Peer Systems.
+\newblock 2002: 280--294.
+
+\bibitem[Vasudevan\ et~al.(2009)Vasudevan, Phanishayee, Shah, Krevat, Andersen,
+  Ganger, Gibson, and Mueller]{Vasudevan2009Safe}
+Vasudevan V, Phanishayee A, Shah H, et~al.
+\newblock Safe and effective fine-grained tcp retransmissions for datacenter
+  communication\allowbreak[J].
+\newblock Sigcomm Comput.commun.rev, 2009, 39\penalty0 (4): 303--314.
+
+\bibitem[Phanishayee\ et~al.(2008)Phanishayee, Krevat, Vasudevan, Andersen,
+  Ganger, Gibson, and Seshan]{Incast08}
+Phanishayee A, Krevat E, Vasudevan V, et~al.
+\newblock Measurement and analysis of tcp throughput collapse in cluster-based
+  storage systems\allowbreak[C]//\allowbreak{}2008: 12:1--12:14.
+
+\bibitem[Chen\ et~al.(2009)Chen, Griffith, Liu, Katz, and Joseph]{Incast09}
+Chen Y, Griffith R, Liu J, et~al.
+\newblock Understanding tcp incast throughput collapse in datacenter
+  networks\allowbreak[C]//\allowbreak{}2009: 73--82.
+
+\bibitem[Vamanan\ et~al.(2012)Vamanan, Hasan, and Vijaykumar]{D2TCP}
+Vamanan B, Hasan J, Vijaykumar T.
+\newblock Deadline-aware datacenter tcp
+  (d2tcp)\allowbreak[C]//\allowbreak{}2012: 115--126.
+
+\bibitem[Munir\ et~al.(2013)Munir, Qazi, Uzmi, Mushtaq, Ismail, Iqbal, and
+  Khan]{L2DCT}
+Munir A, Qazi I, Uzmi Z, et~al.
+\newblock Minimizing flow completion times in data
+  centers\allowbreak[C]//\allowbreak{}INFOCOM, 2013 Proceedings IEEE.
+\newblock 2013: 2157--2165.
+
+\bibitem[Mittal\ et~al.(2015)Mittal, Dukkipati, Blem, Wassel, Ghobadi, Vahdat,
+  Wang, Wetherall, Zats, et~al.]{mittal2015timely}
+Mittal R, Dukkipati N, Blem E, et~al.
+\newblock Timely: Rtt-based congestion control for the
+  datacenter\allowbreak[C]//\allowbreak{}ACM SIGCOMM Computer Communication
+  Review: volume~45.
+\newblock : ACM, 2015: 537--550.
+
+\bibitem[Wu\ et~al.(2013)Wu, Feng, Guo, and Zhang]{ICTCP}
+Wu H, Feng Z, Guo C, et~al.
+\newblock Ictcp: Incast congestion control for tcp in data-center
+  networks\allowbreak[J].
+\newblock Networking, IEEE/ACM Transactions on, 2013, 21\penalty0 (2):
+  345--358.
+
+\bibitem[Wilson\ et~al.(2011)Wilson, Ballani, Karagiannis, and Rowtron]{D3}
+Wilson C, Ballani H, Karagiannis T, et~al.
+\newblock Better never than late: Meeting deadlines in datacenter
+  networks\allowbreak[C]//\allowbreak{}2011: 50--61.
+
+\bibitem[Hong\ et~al.(2012)Hong, Caesar, and Godfrey]{PDQ}
+Hong C~Y, Caesar M, Godfrey P.
+\newblock Finishing flows quickly with preemptive scheduling\allowbreak[J].
+\newblock ACM SIGCOMM Computer Communication Review, 2012, 42\penalty0 (4):
+  127--138.
+
+\bibitem[Bai\ et~al.(2015)Bai, Chen, Wang, Chen, Han, and
+  Tian]{bai2015information}
+Bai W, Chen K, Wang H, et~al.
+\newblock Information-agnostic flow scheduling for commodity data
+  centers.\allowbreak[C]//\allowbreak{}NSDI.
+\newblock 2015: 455--468.
+
+\bibitem[Grosvenor\ et~al.(2015)Grosvenor, Schwarzkopf, Gog, Watson, Moore,
+  Hand, and Crowcroft]{grosvenor2015queues}
+Grosvenor M~P, Schwarzkopf M, Gog I, et~al.
+\newblock Queues don't matter when you can jump
+  them!\allowbreak[C]//\allowbreak{}NSDI.
+\newblock 2015: 1--14.
+
+\bibitem[Perry\ et~al.(2015)Perry, Ousterhout, Balakrishnan, Shah, and
+  Fugal]{perry2015fastpass}
+Perry J, Ousterhout A, Balakrishnan H, et~al.
+\newblock Fastpass: A centralized zero-queue datacenter network\allowbreak[J].
+\newblock ACM SIGCOMM Computer Communication Review, 2015, 44\penalty0 (4):
+  307--318.
+
+\bibitem[Alizadeh\ et~al.(2013)Alizadeh, Yang, Sharif, Katti, McKeown,
+  Prabhakar, and Shenker]{pFabric}
+Alizadeh M, Yang S, Sharif M, et~al.
+\newblock pfabric: Minimal near-optimal datacenter
+  transport\allowbreak[C]//\allowbreak{}2013: 435--446.
+
+\bibitem[Zats\ et~al.(2012)Zats, Das, Mohan, Borthakur, and Katz]{DeTail}
+Zats D, Das T, Mohan P, et~al.
+\newblock Detail: Reducing the flow completion time tail in datacenter
+  networks\allowbreak[C]//\allowbreak{}2012: 139--150.
+
+\bibitem[Chen\ et~al.(2016)Chen, Chen, Bai, and Alizadeh]{chen2016scheduling}
+Chen L, Chen K, Bai W, et~al.
+\newblock Scheduling mix-flows in commodity datacenters with
+  karuna\allowbreak[C]//\allowbreak{}Proceedings of the 2016 conference on ACM
+  SIGCOMM 2016 Conference.
+\newblock : ACM, 2016: 174--187.
+
+\bibitem[Munir\ et~al.(2014)Munir, Baig, Irteza, Qazi, Liu, and Dogar]{PASE}
+Munir A, Baig G, Irteza S~M, et~al.
+\newblock Friends, not foes: synthesizing existing transport strategies for
+  data center networks\allowbreak[C]//\allowbreak{}Proceedings of the 2014 ACM
+  conference on SIGCOMM.
+\newblock : ACM, 2014: 491--502.
+
+\bibitem[Dogar\ et~al.(2014)Dogar, Karagiannis, Ballani, and
+  Rowstron]{dogar2014decentralized}
+Dogar F~R, Karagiannis T, Ballani H, et~al.
+\newblock Decentralized task-aware scheduling for data center
+  networks\allowbreak[C]//\allowbreak{}ACM SIGCOMM Computer Communication
+  Review: volume~44.
+\newblock : ACM, 2014: 431--442.
+
+\bibitem[Chowdhury\ et~al.(2014)Chowdhury, Zhong, and
+  Stoica]{chowdhury2014efficient}
+Chowdhury M, Zhong Y, Stoica I.
+\newblock Efficient coflow scheduling with
+  varys\allowbreak[C]//\allowbreak{}ACM SIGCOMM Computer Communication Review:
+  volume~44.
+\newblock : ACM, 2014: 443--454.
+
+\bibitem[Chowdhury\ et~al.(2012)Chowdhury and Stoica]{chowdhury2012coflow}
+Chowdhury M, Stoica I.
+\newblock Coflow: A networking abstraction for cluster
+  applications\allowbreak[C]//\allowbreak{}Proceedings of the 11th ACM Workshop
+  on Hot Topics in Networks.
+\newblock : ACM, 2012: 31--36.
+
+\bibitem[Chowdhury\ et~al.(2015)Chowdhury and Stoica]{chowdhury2015efficient}
+Chowdhury M, Stoica I.
+\newblock Efficient coflow scheduling without prior
+  knowledge\allowbreak[C]//\allowbreak{}ACM SIGCOMM Computer Communication
+  Review: volume~45.
+\newblock : ACM, 2015: 393--406.
+
+\bibitem[Zhang\ et~al.(2016{\natexlab{a}})Zhang, Chen, Yi, Chen, Chowdhury, and
+  Geng]{zhang2016coda}
+Zhang H, Chen L, Yi B, et~al.
+\newblock Coda: Toward automatically identifying and scheduling coflows in the
+  dark\allowbreak[C]//\allowbreak{}Proceedings of the 2016 conference on ACM
+  SIGCOMM 2016 Conference.
+\newblock : ACM, 2016{\natexlab{a}}: 160--173.
+
+\bibitem[Luo\ et~al.(2016)Luo, Yu, Zhao, Wang, Yu, and Li]{luo2016towards}
+Luo S, Yu H, Zhao Y, et~al.
+\newblock Towards practical and near-optimal coflow scheduling for data center
+  networks\allowbreak[J].
+\newblock IEEE Transactions on Parallel and Distributed Systems, 2016,
+  27\penalty0 (11): 3366--3380.
+
+\bibitem[Roemer(2006)]{roemer2006note}
+Roemer T~A.
+\newblock A note on the complexity of the concurrent open shop
+  problem\allowbreak[J].
+\newblock Journal of scheduling, 2006, 9\penalty0 (4): 389--396.
+
+\bibitem[Zhao\ et~al.(2015)Zhao, Chen, Bai, Yu, Tian, Geng, Zhang, Li, and
+  Wang]{zhao2015rapier}
+Zhao Y, Chen K, Bai W, et~al.
+\newblock Rapier: Integrating routing and scheduling for coflow-aware data
+  center networks\allowbreak[C]//\allowbreak{}Computer Communications
+  (INFOCOM), 2015 IEEE Conference on.
+\newblock : IEEE, 2015: 424--432.
+
+\bibitem[Liu\ et~al.(2017)Liu, Huang, Zhou, Wang, and He]{liu2017task}
+Liu S, Huang J, Zhou Y, et~al.
+\newblock Task-aware tcp in data center
+  networks\allowbreak[C]//\allowbreak{}Distributed Computing Systems (ICDCS),
+  2017 IEEE 37th International Conference on.
+\newblock : IEEE, 2017: 1356--1366.
+
+\bibitem[Qiu\ et~al.(2015)Qiu, Stein, and Zhong]{qiu2015minimizing}
+Qiu Z, Stein C, Zhong Y.
+\newblock Minimizing the total weighted completion time of coflows in
+  datacenter networks\allowbreak[C]//\allowbreak{}Proceedings of the 27th ACM
+  symposium on Parallelism in Algorithms and Architectures.
+\newblock : ACM, 2015: 294--303.
+
+\bibitem[Zhang\ et~al.(2016{\natexlab{b}})Zhang, Shi, Yin, Wang, and
+  Guo]{zhang2016fdrc}
+Zhang H, Shi X, Yin X, et~al.
+\newblock Fdrc-flow duration time based rate control in data center
+  networks\allowbreak[C]//\allowbreak{}Quality of Service (IWQoS), 2016
+  IEEE/ACM 24th International Symposium on.
+\newblock : IEEE, 2016{\natexlab{b}}: 1--10.
+
+\bibitem[Meisner\ et~al.(2011)Meisner, Sadler, Barroso, Weber, and
+  Wenisch]{OLDI}
+Meisner D, Sadler C~M, Barroso L~A, et~al.
+\newblock Power management of online data-intensive
+  services\allowbreak[C]//\allowbreak{}2011: 319--330.
+
+\bibitem[ns2()]{ns2}
+The network simulator --- ns-2\allowbreak[EB/OL].
+\newblock \url{http://www.isi.edu/nsnam/ns/}.
+
+\bibitem[LPD({\natexlab{a}})]{LPD-sim-code}
+Simulation code of lpd\allowbreak[EB/OL].
+\newblock \url{https://github.com/zhanghan1990/LPD-sim/}.
+
+\bibitem[LPD({\natexlab{b}})]{LPD-code}
+Linux kernel code of lpd\allowbreak[EB/OL].
+\newblock \url{https://github.com/zhanghan1990/LPD/}.
+
+\bibitem[Wischik\ et~al.(2011)Wischik, Raiciu, Greenhalgh, and
+  Handley]{wischik2011design}
+Wischik D, Raiciu C, Greenhalgh A, et~al.
+\newblock Design, implementation and evaluation of congestion control for
+  multipath tcp.\allowbreak[C]//\allowbreak{}NSDI: volume~11.
+\newblock 2011: 8--8.
+
+\bibitem[Alizadeh\ et~al.(2011)Alizadeh, Javanmard, and
+  Prabhakar]{DCTCPAnalysis}
+Alizadeh M, Javanmard A, Prabhakar B.
+\newblock Analysis of dctcp: stability, convergence, and
+  fairness\allowbreak[C]//\allowbreak{}Proceedings of the ACM SIGMETRICS joint
+  international conference on Measurement and modeling of computer systems.
+\newblock : ACM, 2011: 73--84.
+
+\bibitem[Scalability()]{DCTCPcode}
+Scalability H.
+\newblock Latency is everywhere and it costs you sales - how to crush
+  it\allowbreak[EB/OL].
+\newblock \url{http://simula.stanford.edu/~alizade/Site/DCTCP.html}.
+
+\bibitem[Lee\ et~al.(2014)Lee, Turner, Lee, Popa, Banerjee, Kang, and
+  Sharma]{CloudMirror}
+Lee J, Turner Y, Lee M, et~al.
+\newblock Application-driven bandwidth guarantees in
+  datacenters\allowbreak[C]//\allowbreak{}Proceedings of the 2014 ACM
+  conference on SIGCOMM.
+\newblock : ACM, 2014: 467--478.
+
+\bibitem[dum()]{dummynet}
+The dummynet project. [online]. available\allowbreak[EB/OL].
+\newblock \url{http://info.iet.unipi.it/∼luigi/dummynet/}.
+
+\bibitem[Cao\ et~al.(2013)Cao, Xu, Fu, and Dong]{MPTCP}
+Cao Y, Xu M, Fu X, et~al.
+\newblock Explicit multipath congestion control for data center
+  networks\allowbreak[C]//\allowbreak{}Proceedings of the ninth ACM conference
+  on Emerging networking experiments and technologies.
+\newblock : ACM, 2013: 73--84.
+
+\bibitem[Zhang\ et~al.(2015)Zhang, Shi, Yin, Ren, and Wang]{LPD}
+Zhang H, Shi X, Yin X, et~al.
+\newblock More load, more differentiation—a design principle for
+  deadline-aware congestion control\allowbreak[C]//\allowbreak{}Computer
+  Communications (INFOCOM), 2015 IEEE Conference on.
+\newblock : IEEE, 2015: 127--135.
+
+\bibitem[Bar-Noy\ et~al.(2000)Bar-Noy, Halld{\'o}rsson, Kortsarz, Salman, and
+  Shachnai]{COLOR}
+Bar-Noy A, Halld{\'o}rsson M~M, Kortsarz G, et~al.
+\newblock Sum multicoloring of graphs\allowbreak[J].
+\newblock Journal of Algorithms, 2000, 37\penalty0 (2): 422--450.
+
+\bibitem[Huang\ et~al.(2016)Huang, Sun, and Ng]{huang2016sunflow}
+Huang X~S, Sun X~S, Ng T~E.
+\newblock Sunflow: Efficient optical circuit scheduling for
+  coflows\allowbreak[C]//\allowbreak{}Proceedings of the 12th International on
+  Conference on emerging Networking EXperiments and Technologies.
+\newblock : ACM, 2016: 297--311.
+
+\bibitem[Mastrolilli\ et~al.(2010)Mastrolilli, Queyranne, Schulz, Svensson, and
+  Uhan]{mastrolilli2010minimizing}
+Mastrolilli M, Queyranne M, Schulz A~S, et~al.
+\newblock Minimizing the sum of weighted completion times in a concurrent open
+  shop\allowbreak[J].
+\newblock Operations Research Letters, 2010, 38\penalty0 (5): 390--395.
+
+\bibitem[Chen\ et~al.(2000)Chen and Hall]{chen2000supply}
+Chen Z~L, Hall N~G.
+\newblock Supply chain scheduling: Assembly systems\allowbreak[R].
+\newblock : Working Paper, Department of Systems Engineering, University of
+  Pennsylvania, 2000.
+
+\bibitem[Qiu\ et~al.(2016)Qiu, Stein, and Zhong]{Qiu2016Experimental}
+Qiu Z, Stein C, Zhong Y.
+\newblock Experimental analysis of algorithms for coflow
+  scheduling\allowbreak[C]//\allowbreak{}International Symposium on
+  Experimental Algorithms.
+\newblock 2016: 262--277.
+
+\bibitem[Kumar\ et~al.(2011)Kumar, Manokaran, Tulsiani, and
+  Vishnoi]{kumar2011lp}
+Kumar A, Manokaran R, Tulsiani M, et~al.
+\newblock On lp-based approximability for strict
+  csps\allowbreak[C]//\allowbreak{}Proceedings of the twenty-second annual
+  ACM-SIAM symposium on Discrete Algorithms.
+\newblock : Society for Industrial and Applied Mathematics, 2011: 1560--1573.
+
+\bibitem[Sathiamoorthy\ et~al.(2013)Sathiamoorthy, Asteris, Papailiopoulos,
+  Dimakis, Vadali, Chen, and Borthakur]{sathiamoorthy2013xoring}
+Sathiamoorthy M, Asteris M, Papailiopoulos D, et~al.
+\newblock Xoring elephants: Novel erasure codes for big
+  data\allowbreak[C]//\allowbreak{}Proceedings of the VLDB Endowment: volume~6.
+\newblock : VLDB Endowment, 2013: 325--336.
+
+\bibitem[Wu\ et~al.(2010)Wu, Ping, Ge, Wang, and Fu]{wu2010cloud}
+Wu J, Ping L, Ge X, et~al.
+\newblock Cloud storage as the infrastructure of cloud
+  computing\allowbreak[C]//\allowbreak{}Intelligent Computing and Cognitive
+  Informatics (ICICCI), 2010 International Conference on.
+\newblock : IEEE, 2010: 380--383.
+
+\bibitem[Beaver\ et~al.(2010)Beaver, Kumar, Li, Sobel, Vajgel,
+  et~al.]{beaver2010finding}
+Beaver D, Kumar S, Li H~C, et~al.
+\newblock Finding a needle in haystack: Facebook's photo
+  storage.\allowbreak[C]//\allowbreak{}OSDI: volume~10.
+\newblock 2010: 1--8.
+
+\bibitem[Li\ et~al.(2013)Li and Li]{li2013erasure}
+Li J, Li B.
+\newblock Erasure coding for cloud storage systems: a survey\allowbreak[J].
+\newblock Tsinghua Science and Technology, 2013, 18\penalty0 (3): 259--272.
+
+\bibitem[Dimakis\ et~al.()Dimakis, Prabhakaran, and
+  Ramchandran]{dimakis606049decentralized}
+Dimakis A~G, Prabhakaran V, Ramchandran K.
+\newblock Decentralized erasure codes for distributed networked
+  storage\allowbreak[J].
+\newblock arXiv preprint cs/0606049.
+
+\bibitem[Lin\ et~al.(2012)Lin and Tzeng]{lin2012secure}
+Lin H~Y, Tzeng W~G.
+\newblock A secure erasure code-based cloud storage system with secure data
+  forwarding\allowbreak[J].
+\newblock IEEE transactions on parallel and distributed systems, 2012,
+  23\penalty0 (6): 995--1003.
+
+\bibitem[Dimakis\ et~al.(2010)Dimakis, Godfrey, Wu, Wainwright, and
+  Ramchandran]{dimakis2010network}
+Dimakis A~G, Godfrey P~B, Wu Y, et~al.
+\newblock Network coding for distributed storage systems\allowbreak[J].
+\newblock IEEE Transactions on Information Theory, 2010, 56\penalty0 (9):
+  4539--4551.
+
+\bibitem[Schurman\ et~al.(2009)Schurman and Brutlag]{schurman2009user}
+Schurman E, Brutlag J.
+\newblock The user and business impact of server delays, additional bytes, and
+  http chunking in web search\allowbreak[C]//\allowbreak{}Velocity Web
+  Performance and Operations Conference.
+\newblock 2009.
+
+\bibitem[Dean\ et~al.(2008)Dean and Ghemawat]{dean2008mapreduce}
+Dean J, Ghemawat S.
+\newblock Mapreduce: simplified data processing on large
+  clusters\allowbreak[J].
+\newblock Communications of the ACM, 2008, 51\penalty0 (1): 107--113.
+
+\bibitem[DTA()]{DTARGET}
+D-target\allowbreak[EB/OL].
+\newblock \url{https://github.com/zhanghan1990/D-Target/}.
+
+\bibitem[TC()]{TC}
+Traffic control\allowbreak[EB/OL].
+\newblock \url{http://tldp.org/HOWTO/Traffic-Control-HOWTO/intro.html/}.
+
+\bibitem[He\ et~al.(2016)He, Rozner, Agarwal, Gu, Felter, Carter, and
+  Akella]{He2016AC}
+He K, Rozner E, Agarwal K, et~al.
+\newblock Ac/dc tcp: Virtual congestion control enforcement for datacenter
+  networks\allowbreak[C]//\allowbreak{}Conference on ACM SIGCOMM 2016
+  Conference.
+\newblock 2016: 244--257.
+
+\bibitem[Cronkite-Ratcliff\ et~al.(2016)Cronkite-Ratcliff, Bergman, Keslassy,
+  Keslassy, Keslassy, Keslassy, and Keslassy]{Cronkite2016Virtualized}
+Cronkite-Ratcliff B, Bergman A, Keslassy I, et~al.
+\newblock Virtualized congestion control\allowbreak[C]//\allowbreak{}Conference
+  on ACM SIGCOMM 2016 Conference.
+\newblock 2016: 230--243.
+
+\end{thebibliography}
