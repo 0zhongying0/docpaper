@@ -20,7 +20,7 @@ FlyTransfer系统包含三个组件，负责进行任务调度的master节点，
 负责进行任务发送和接收的worker节点，负责进行信息备份的backup节点。
 图\ref{Yosemite-design-fig}显示的是FlyTransfer系统的架构图。
 其中master节点包括三个部分：和用户进行交互的UI部分－web server，
-进行coflow调度的scheduler，调度器可以运行各种coflow调度算法。
+进行流组调度的scheduler，调度器可以运行各种流组调度算法。
 进行底层通信的slave。
 worker节点包含两个部分：给用户和应用提供API的client组件，底层通信slave 组件。
 backup节点是进行备份，其中backup节点包括information storage和slave两个组件。
@@ -29,8 +29,8 @@ backup节点是进行备份，其中backup节点包括information storage和slav
 master组件是FlyTransfer系统的“大脑”部分，是整个系统的核心部分。
 FlyTransfer系统采用集中式控制机制，Master节点是系统的控制部分。
 master节点包括三个部分：和用户进行交互的UI部分－web server，
-进行coflow调度的scheduler，调度器可以运行各种coflow调度算法。
-用户可以通过Web Server查看coflow的调度实时状态，
+进行流组调度的scheduler，调度器可以运行各种流组调度算法。
+用户可以通过Web Server查看流组的调度实时状态，
 Web Server 开放默认端口16016，其中主界面显示如图\ref{Yosemite-Master-fig}所示。
 \begin{figure}[b]
 \begin{center}
@@ -50,18 +50,18 @@ Web Server 开放默认端口16016，其中主界面显示如图\ref{Yosemite-Ma
 \end{figure}
 
 从图\ref{Yosemite-Master-fig}可以看到，主界面主要有三部分：
-Slave的数目，正在运行coflow的信息，已经完成传输的coflow信息。
+Slave的数目，正在运行coflow的信息，已经完成传输的流组信息。
 Web Server是基于jetty\footnote{http://www.eclipse.org/jetty/download.html}实现的。
-Web Server同时把coflow调度的信息存储在数据库中。
+Web Server同时把流组调度的信息存储在数据库中。
 
 图\ref{Yosemite-Salve-Coflow-fig}(a)显示的是Slave的信息，
 其中包括Slave 标记（ID）和Slave的发送和接收的信息等。
-图\ref{Yosemite-Salve-Coflow-fig}(b)显示的是coflow的信息，
-其中包括coflow 的ID和coflow的提交时间以及coflow当前的状态（是否完成，是否在传输）等。
+图\ref{Yosemite-Salve-Coflow-fig}(b)显示的是流组的信息，
+其中包括流组ID和流组的提交时间以及流组当前的状态（是否完成，是否在传输）等。
 
 FlyTransfer的 Scheduler是数据中心应用数据流和任务的调度器，
-在前面章节中介绍的调度策略，coflow的排序均实现在这个组件中。
-本组件收集coflow的信息，并且计算每条coflow中数据流的带宽。
+在前面章节中介绍的调度策略，流组的排序均实现在这个组件中。
+本组件收集流组的信息，并且计算每条流组中数据流的带宽。
 计算完毕后，把每条流信息传递给comm server，然后发放给对应的worker节点，
 相应的worker节点按照计算的速率发送数据流。
 
@@ -113,7 +113,7 @@ DeleteFlow & 从Worker到Master&删除一条数据流\\
 \toprule
 \end{tabular}
 \end{table}
-其中消息类型可以分成三类，组件的处理，coflow的处理，数据流的处理。
+其中消息类型可以分成三类，组件的处理，流组的处理，数据流的处理。
 DataServer主要进行数据的传输，DataServer可以按照计算而得的速率进行传输。
 
 
@@ -122,11 +122,11 @@ DataServer主要进行数据的传输，DataServer可以按照计算而得的速
  worker节点包含两个部分：给用户和应用提供API的client组件，
  底层通信slave 组件，其中Slave组件和Master部分相同。
  Worker节点提供的API如表\ref{Master:API}所示。
-表\ref{Master:API}中API中，registerCoflow是注册coflow,其中参数为CoflowDescription，
-CoflowDescription是对coflow的描述，包含coflow重要性，coflow的宽度等信息。
-unregisterCoflow是注销coflow，当coflow结束传输时，此函数被调用。
+表\ref{Master:API}中API中，registerCoflow是注册流组,其中参数为CoflowDescription，
+CoflowDescription是对流组描述，包含流组重要性，流组的宽度等信息。
+unregisterCoflow是注销流组，当流组结束传输时，此函数被调用。
 handlePut参数是coflowId和flowDescription，是给系统注册一条属于coflowId的数据流。
-handleGet是获得当前coflow调度的实时信息。
+handleGet是获得当前流组调度的实时信息。
 handleFlow是决定是否开启流级别优化，默认情况下不开启。
 ChooseScheduler用来选择调度策略，默认的调度策略是Yosemite算法。
 
@@ -161,7 +161,7 @@ RateLimiter主要和Data Server协作，
  \subsection{backup组件}
  backup组件是备份节点，主要进行信息备份，
  其中master组件不断的把信息传递给backup组件，
- backup组件备份正在调度的coflow的信息，同时对master组件进行监控
+ backup组件备份正在调度的流组的信息，同时对master组件进行监控
  当master出现宕机时，backup节点会立刻重启master组件，并且让master组件
  恢复到宕机前状态。
  
@@ -177,6 +177,8 @@ RateLimiter主要和Data Server协作，
  \subsection{任务级优化对比}
 
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{0pt} 
+\setlength{\belowcaptionskip}{1pt} 
   \centering%
   \subcaptionbox{平均CCT} %标题的长度，超过则会换行，如下一个小图。
     {\includegraphics[width=0.5\columnwidth]{figures/Yosemite/figs/evaluation/ex5/real1.eps}}%
@@ -196,11 +198,11 @@ RateLimiter主要和Data Server协作，
 使用使用FlyTransfer使用Yosemite策略下的下的map-reduce, file-copy, file-distribute, data-backup, data-distribute，5类应用的平均CCT分别为：2，7，4，10，12。
 使用Varys下的map-reduce, file-copy, file-distribute, data-backup, data-distribute，5类应用的平均CCT分别为：3，14，3，9，11。
 使用TCP，这5类应用的平均CCT分别为：7，12，6，22，25。
-为了避免某些极端值对实验结论的影响，我们绘制了95th比例coflow的平均CCT实验结果，如图\ref{Yosemite-evaluation_cloud_fig}（b）所示。
+为了避免某些极端值对实验结论的影响，我们绘制了95th比例流组的平均CCT实验结果，如图\ref{Yosemite-evaluation_cloud_fig}（b）所示。
 我们发现使用FlyTransfer使用Yosemite策略下的map-reduce, file-copy, file-distribute, data-backup, data-distribute，5类应用的平均CCT分别为1.9，6，3，9.4，13。
 使用Varys结果是：3.1，13，2.4，9.2，10。
 使用TCP，这5类应用的平均CCT分别为：6.8，11.2，5，21，23。
-我们看到对于重要的应用map-reduce, file-copy，使用FlyTransfer使用Yosemite策略下的性能比Varys提高20\% $ \sim$ 30\%，但是对于不重要的应用，使用FlyTransfer使用Yosemite策略下的性能比Varys性能差20\%。图\ref{Yosemite-evaluation_cloud_fig}（c）展示的是file-distribution的结果，给应用的coflow设置5个优先级：紧急，重要，正常，不重要，松散，我们发现Yosemite性能比Varys提高 20\%，图\ref{Yosemite-evaluation_cloud_fig}(d) 的结果类似。
+我们看到对于重要的应用map-reduce, file-copy，使用FlyTransfer使用Yosemite策略下的性能比Varys提高20\% $ \sim$ 30\%，但是对于不重要的应用，使用FlyTransfer使用Yosemite策略下的性能比Varys性能差20\%。图\ref{Yosemite-evaluation_cloud_fig}（c）展示的是file-distribution的结果，给应用的流组设置5个优先级：紧急，重要，正常，不重要，松散，我们发现Yosemite性能比Varys提高 20\%，图\ref{Yosemite-evaluation_cloud_fig}(d) 的结果类似。
 
  \subsection{流级优化对比}
  \begin{figure}[h]

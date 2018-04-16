@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.12.29)  28 MAR 2018 13:18
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.12.29)  16 APR 2018 10:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -8,7 +8,7 @@ entering extended mode
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 84 language(s) loaded.
 (./thuthesis.cls
-Document Class: thuthesis 2017/12/18 5.4.2 Tsinghua University Thesis Template
+Document Class: thuthesis 2017/12/24 5.4.3 Tsinghua University Thesis Template
 (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
@@ -1972,7 +1972,7 @@ s
 .................................................
 )
 (./thuthesis.cfg
-File: thuthesis.cfg 2017/12/18 5.4.2 Tsinghua University Thesis Template
+File: thuthesis.cfg 2017/12/24 5.4.3 Tsinghua University Thesis Template
 \c@currproofctr=\count324
 \c@endproofctr=\count325
 \c@proof=\count326
@@ -2181,20 +2181,19 @@ Package: relsize 2013/03/29 ver 4.1
 \algocf@algoframe=\box76
 \algocf@algobox=\box77
 )
-LaTeX Font Info:    Try loading font information for T1+ntxtlf on input line 20
+LaTeX Font Info:    Try loading font information for T1+ntxtlf on input line 22
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2015/01/17 v1.0 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.045pt on input line 20.
+(Font)              scaled to size 12.045pt on input line 22.
  (./main.aux
-(./data/chap01.aux) (./data/chap02.aux) (./data/chap03.aux
+(./data/chap01.aux) (./data/chap02.aux) (./data/chap04.aux
 
 LaTeX Warning: Label `fluid-model_queue' multiply defined.
 
-) (./data/chap04.aux
 
 LaTeX Warning: Label `rate-analysis-fig' multiply defined.
 
@@ -2265,75 +2264,68 @@ LaTeX Warning: Label `sub@LPD_Motivation:subfig4' multiply defined.
 
 LaTeX Warning: Label `fdrc-miss-spine-data-fig' multiply defined.
 
-) (./data/chap08.aux) (./data/chap06.aux
-
-LaTeX Warning: Label `eq:ingress_constraint' multiply defined.
-
-
-LaTeX Warning: Label `eq:egress_constraint' multiply defined.
-
-) (./data/chap07.aux) (./data/chap09.aux) (./data/chap10.aux) (./data/ack.aux)
-(./data/resume.aux))
+) (./data/chap06.aux) (./data/chap07.aux) (./data/chap09.aux)
+(./data/chap10.aux) (./data/ack.aux) (./data/resume.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 20.
-LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 20
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 22.
+LaTeX Font Info:    Try loading font information for OML+ntxmi on input line 22
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 20.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 20.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 22.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 20.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 20.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 22.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 20.
-LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 20
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for LMS+ntxsy on input line 22
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 22.
 LaTeX Font Info:    Try loading font information for LMX+ntxexx on input line 2
-0.
+2.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 20.
+LaTeX Info: Redefining \selectfont on input line 22.
 \c@mv@tabular=\count382
 \c@mv@boldtabular=\count383
 Package caption Info: Begin \AtBeginDocument code.
@@ -2356,7 +2348,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
 
 )
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 22.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -2366,9 +2358,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count384
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -2412,7 +2404,7 @@ LaTeX Info: Redefining \nameref on input line 20.
 
 (./data/cover.tex)
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 26.09749pt on input line 29.
+(Font)              scaled to size 26.09749pt on input line 30.
 
 *************************************************
 * fontspec warning: "script-not-exist-latn"
@@ -2431,12 +2423,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 . 
 . Could not resolve font "STXihei/I" (it probably doesn't exist).
 .................................................
-LaTeX Font Info:    Try loading font information for T1+qhv on input line 29.
+LaTeX Font Info:    Try loading font information for T1+qhv on input line 30.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 10.84042pt on input line 29.
+(Font)              scaled to size 10.84042pt on input line 30.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -2454,11 +2446,11 @@ LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 23.48758pt on input line 29.
+(Font)              scaled to size 23.48758pt on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 18.06749pt on input line 29.
+(Font)              scaled to size 18.06749pt on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 16.06pt on input line 29.
+(Font)              scaled to size 16.06pt on input line 30.
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -2492,41 +2484,41 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 . - 'normal' (m/n) with NFSS spec.: <->"STFangsong/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-LaTeX Font Info:    Try loading font information for OT1+ntxtlf on input line 2
-9.
+LaTeX Font Info:    Try loading font information for OT1+ntxtlf on input line 3
+0.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2015/01/17 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 16.06pt on input line 29.
+(Font)              scaled to size 16.06pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 29.
+(Font)              scaled to size 14.05249pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 29.
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 29.
+(Font)              scaled to size 10.53937pt on input line 30.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 30.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2016/01/31 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsym on input line 29.
+LaTeX Font Info:    Try loading font information for U+ntxsym on input line 30.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 29.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 30.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 16.06pt on input line 29.
+(Font)              scaled to size 16.06pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.05249pt on input line 29.
+(Font)              scaled to size 14.05249pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.53937pt on input line 29.
+(Font)              scaled to size 10.53937pt on input line 30.
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -2569,40 +2561,40 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 22.08249pt on input line 29.
+(Font)              scaled to size 22.08249pt on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <22.08249> not availabl
 e
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 22.08249pt on input line 29.
+(Font)              scaled to size 22.08249pt on input line 30.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <22.08249> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 19.8741pt on input line 29.
+(Font)              scaled to size 19.8741pt on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <16.06> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 16.06pt on input line 29.
+(Font)              scaled to size 16.06pt on input line 30.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <16.06> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 14.45389pt on input line 29.
+(Font)              scaled to size 14.45389pt on input line 30.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 14.45389pt on input line 29.
+(Font)              scaled to size 14.45389pt on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 15.05624pt on input line 29.
+(Font)              scaled to size 15.05624pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 15.05624pt on input line 29.
+(Font)              scaled to size 15.05624pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.045pt on input line 29.
+(Font)              scaled to size 12.045pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 29.
+(Font)              scaled to size 9.03374pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 15.05624pt on input line 29.
+(Font)              scaled to size 15.05624pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.045pt on input line 29.
+(Font)              scaled to size 12.045pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.03374pt on input line 29.
+(Font)              scaled to size 9.03374pt on input line 30.
  [3] [4
 
 
@@ -2640,44 +2632,49 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.05249pt on input line 29.
+(Font)              scaled to size 14.05249pt on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <14.05249> not availabl
 e
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 29.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.05249pt on input line 29.
+(Font)              scaled to size 14.05249pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 29.
+(Font)              scaled to size 8.0pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 29.
+(Font)              scaled to size 6.0pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.0pt on input line 29.
+(Font)              scaled to size 8.0pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.0pt on input line 29.
+(Font)              scaled to size 6.0pt on input line 30.
 [5] [6
 
 
 ]
-LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <12.045> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 29.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.045pt on input line 29.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.53937pt on input line 29.
+(Font)              scaled to size 10.53937pt on input line 30.
  [1
 
 
-] [2
+]
+LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <12.045> not available
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 30.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.045pt on input line 30.
+ [2] [3
 
 
-] [3] (./main.toc [4
+] [4] (./main.toc [5
 
 
-] [5] [6])
+] [6] [7])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [7]
+ (./data/denotation.tex
+[8]) [9
+
+
+]
 \openout2 = `data/chap01.aux'.
 
  (./data/chap01.tex
@@ -2703,19 +2700,19 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 
 
 
-]
+] [2]
+[3] [4] [5]
 File: figures/structure.pdf Graphic file (type pdf)
 <use figures/structure.pdf>
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 11.04124pt on input line 90.
- [2]
-[3] [4] [5]) [6]
+(Font)              scaled to size 11.04124pt on input line 243.
+) [6]
 \openout2 = `data/chap02.aux'.
 
  (./data/chap02.tex
 第2章
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 11.74377pt on input line 19.
+(Font)              scaled to size 11.74377pt on input line 24.
 File: figures/others/map-reduce.pdf Graphic file (type pdf)
 <use figures/others/map-reduce.pdf>
 File: figures/others/vertex2.pdf Graphic file (type pdf)
@@ -2736,68 +2733,52 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ] [8] [9] [10]
-File: figures/others/deadline-picture.pdf Graphic file (type pdf)
-<use figures/others/deadline-picture.pdf>
- [11] [12]
+File: figures/others/1.pdf Graphic file (type pdf)
+<use figures/others/1.pdf>
+ [11]
 File: figures/others/require.pdf Graphic file (type pdf)
 <use figures/others/require.pdf>
- [13] [14] [15] [16] [17] [18] [19]) [20]
-\openout2 = `data/chap03.aux'.
-
-
-(./data/chap03.tex
-第3章
-File: figures/others/model-process.pdf Graphic file (type pdf)
-<use figures/others/model-process.pdf>
-[21
-
-
-
-]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 38.
-Package hyperref Info: bookmark level for unknown equation defaults to 0 on inp
-ut line 42.
-File: figures/others/senders.eps Graphic file (type eps)
-<figures/others/senders.eps>
- [22] [23]
-File: figures/others/DCTCP/alpha.pdf Graphic file (type pdf)
-<use figures/others/DCTCP/alpha.pdf>
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 13
-0.
+ [12] [13]
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 27
+2.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 11.04124pt on input line 130.
+(Font)              scaled to size 11.04124pt on input line 272.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.06006pt on input line 130.
+(Font)              scaled to size 8.06006pt on input line 272.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.07271pt on input line 130.
+(Font)              scaled to size 6.07271pt on input line 272.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 11.04124pt on input line 130.
+(Font)              scaled to size 11.04124pt on input line 272.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.06006pt on input line 130.
+(Font)              scaled to size 8.06006pt on input line 272.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.07271pt on input line 130.
-File: figures/others/DCTCP/queue.pdf Graphic file (type pdf)
-<use figures/others/DCTCP/queue.pdf>
-File: figures/others/DCTCP/window.pdf Graphic file (type pdf)
-<use figures/others/DCTCP/window.pdf>
-) [24] [25]
-\openout2 = `data/chap04.aux'.
+(Font)              scaled to size 6.07271pt on input line 272.
 
- (./data/chap04.tex
-第4章
-[26
-
-
-
-] [27]
-Overfull \hbox (17.26353pt too wide) in paragraph at lines 102--113
+Overfull \hbox (15.71313pt too wide) in paragraph at lines 272--280
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[14] [15] [16] [17] [18]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.06006pt on input line 505.
+
+Overfull \hbox (9.35558pt too wide) in paragraph at lines 502--516
+ [][] 
+ []
+
+[19] [20]) [21]
+\openout2 = `data/chap04.aux'.
+
+ (./data/chap04.tex
+第3章
+[22
+
+
+
+] [23]
 File: figures/LPD/bandwidth.eps Graphic file (type eps)
 <figures/LPD/bandwidth.eps>
 File: figures/LPD/cwnd.eps Graphic file (type eps)
@@ -2806,6 +2787,7 @@ File: figures/LPD/deadlinefactor.eps Graphic file (type eps)
 <figures/LPD/deadlinefactor.eps>
 File: figures/LPD/alpha.eps Graphic file (type eps)
 <figures/LPD/alpha.eps>
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -2816,17 +2798,60 @@ File: figures/LPD/PD.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28] [29] [30] [31]
+[24]
+LaTeX Font Info:    Calculating math sizes for size <13.04874> on input line 17
+2.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 13.04874pt on input line 172.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.52551pt on input line 172.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 7.17683pt on input line 172.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 13.04874pt on input line 172.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 9.52551pt on input line 172.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 7.17683pt on input line 172.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 172.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 172.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 172.
+
+[25] [26]
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 264.
+line 228.
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
-line 273.
- [32] [33]
+line 237.
+Package hyperref Info: bookmark level for unknown equation defaults to 0 on inp
+ut line 249.
+ [27]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 274.
+ [28]
 File: figures/LPD/rate2.eps Graphic file (type eps)
 <figures/LPD/rate2.eps>
 File: figures/LPD/ratio.eps Graphic file (type eps)
 <figures/LPD/ratio.eps>
- [34]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29]
+File: figures/others/model-process.pdf Graphic file (type pdf)
+<use figures/others/model-process.pdf>
+ [30]
+File: figures/others/senders.eps Graphic file (type eps)
+<figures/others/senders.eps>
+ [31] [32]
 File: figures/LPD/2/window.eps Graphic file (type eps)
 <figures/LPD/2/window.eps>
 File: figures/LPD/2/queue.eps Graphic file (type eps)
@@ -2837,25 +2862,21 @@ File: figures/LPD/parameter/ratio.eps Graphic file (type eps)
 <figures/LPD/parameter/ratio.eps>
 File: figures/LPD/parameter/window2.eps Graphic file (type eps)
 <figures/LPD/parameter/window2.eps>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[35]
+ [33]
 Missing character: There is no … in font ntx-Regular-tlf-ot1!
- [36]
+ [34]
 File: figures/LPD/model/qmin.pdf Graphic file (type pdf)
 <use figures/LPD/model/qmin.pdf>
 File: figures/LPD/model/k.pdf Graphic file (type pdf)
 <use figures/LPD/model/k.pdf>
 
-Overfull \hbox (1.80669pt too wide) in paragraph at lines 559--571
+Overfull \hbox (1.80669pt too wide) in paragraph at lines 606--618
 []$[]$ $[]$ 
  []
 
 File: figures/LPD/model/throughput.pdf Graphic file (type pdf)
 <use figures/LPD/model/throughput.pdf>
-[37] [38]
+[35] [36]
 File: figures/LPD/evaluation_1/LPD_bandwidth2.eps Graphic file (type eps)
 <figures/LPD/evaluation_1/LPD_bandwidth2.eps>
 File: figures/LPD/evaluation_1/LPD_window2.eps Graphic file (type eps)
@@ -2864,10 +2885,6 @@ File: figures/LPD/evaluation_1/LPD_factor2.eps Graphic file (type eps)
 <figures/LPD/evaluation_1/LPD_factor2.eps>
 File: figures/LPD/evaluation_1/LPD_alpha2.eps Graphic file (type eps)
 <figures/LPD/evaluation_1/LPD_alpha2.eps>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: figures/LPD/evaluation_1/LPD_bandwidth.eps Graphic file (type eps)
 <figures/LPD/evaluation_1/LPD_bandwidth.eps>
 File: figures/LPD/evaluation_1/LPD_window.eps Graphic file (type eps)
@@ -2877,21 +2894,31 @@ File: figures/LPD/evaluation_1/LPD_queue.eps Graphic file (type eps)
 File: figures/LPD/evaluation_1/LPD_alpha.eps Graphic file (type eps)
 <figures/LPD/evaluation_1/LPD_alpha.eps>
 
+Overfull \hbox (1.80669pt too wide) in paragraph at lines 683--690
+[][] []
+ []
+
+
+Overfull \hbox (1.80669pt too wide) in paragraph at lines 683--690
+[] [] 
+ []
+
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39]
+[37]
 File: figures/LPD/evaluation_3/DMAX.eps Graphic file (type eps)
 <figures/LPD/evaluation_3/DMAX.eps>
- [40] [41]
+ [38] [39]
 File: figures/LPD/DataCenter.eps Graphic file (type eps)
 <figures/LPD/DataCenter.eps>
- [42]
 File: figures/LPD/old/tight.eps Graphic file (type eps)
 <figures/LPD/old/tight.eps>
 File: figures/LPD/old/moderate.eps Graphic file (type eps)
 <figures/LPD/old/moderate.eps>
 File: figures/LPD/old/lax.eps Graphic file (type eps)
 <figures/LPD/old/lax.eps>
+ [40]
 File: figures/LPD/old/tight1.eps Graphic file (type eps)
 <figures/LPD/old/tight1.eps>
 File: figures/LPD/old/moderate1.eps Graphic file (type eps)
@@ -2904,23 +2931,16 @@ File: figures/LPD/old/moderate2.eps Graphic file (type eps)
 <figures/LPD/old/moderate2.eps>
 File: figures/LPD/old/lax2.eps Graphic file (type eps)
 <figures/LPD/old/lax2.eps>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[43] [44]
+ [41]
 File: figures/LPD/spineleaf.pdf Graphic file (type pdf)
 <use figures/LPD/spineleaf.pdf>
+ [42]
 File: figures/LPD/spineleaf/miss_deadline_1.eps Graphic file (type eps)
 <figures/LPD/spineleaf/miss_deadline_1.eps>
 File: figures/LPD/spineleaf/miss_deadline_5.eps Graphic file (type eps)
 <figures/LPD/spineleaf/miss_deadline_5.eps>
 File: figures/LPD/spineleaf/miss_deadline_10.eps Graphic file (type eps)
 <figures/LPD/spineleaf/miss_deadline_10.eps>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: figures/LPD/spineleaf/miss_deadline_4.eps Graphic file (type eps)
 <figures/LPD/spineleaf/miss_deadline_4.eps>
 File: figures/LPD/spineleaf/miss_deadline_6.eps Graphic file (type eps)
@@ -2928,47 +2948,55 @@ File: figures/LPD/spineleaf/miss_deadline_6.eps Graphic file (type eps)
 File: figures/LPD/spineleaf/miss_deadline_9.eps Graphic file (type eps)
 <figures/LPD/spineleaf/miss_deadline_9.eps>
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[45] [46]
+[43]
 File: figures/LPD/spineleaf/FCT_SEARCH_average.eps Graphic file (type eps)
 <figures/LPD/spineleaf/FCT_SEARCH_average.eps>
 File: figures/LPD/spineleaf/FCT_SEARCH_large.eps Graphic file (type eps)
 <figures/LPD/spineleaf/FCT_SEARCH_large.eps>
 File: figures/LPD/spineleaf/FCT_SEARCH_small.eps Graphic file (type eps)
 <figures/LPD/spineleaf/FCT_SEARCH_small.eps>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: figures/LPD/spineleaf/FCT_DATA_average.eps Graphic file (type eps)
 <figures/LPD/spineleaf/FCT_DATA_average.eps>
 File: figures/LPD/spineleaf/FCT_DATA_large.eps Graphic file (type eps)
 <figures/LPD/spineleaf/FCT_DATA_large.eps>
 File: figures/LPD/spineleaf/FCT_DATA_small.eps Graphic file (type eps)
 <figures/LPD/spineleaf/FCT_DATA_small.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: figures/LPD/spineleaf/average_fct.eps Graphic file (type eps)
 <figures/LPD/spineleaf/average_fct.eps>
 File: figures/LPD/spineleaf/large_fct.eps Graphic file (type eps)
 <figures/LPD/spineleaf/large_fct.eps>
 File: figures/LPD/spineleaf/small_fct.eps Graphic file (type eps)
 <figures/LPD/spineleaf/small_fct.eps>
- [47]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44] [45]
 File: figures/LPD/Realtest/realbandwidth2.eps Graphic file (type eps)
 <figures/LPD/Realtest/realbandwidth2.eps>
 File: figures/LPD/Realtest/realqueue2.eps Graphic file (type eps)
 <figures/LPD/Realtest/realqueue2.eps>
- [48]
+ [46]
 File: figures/LPD/realtopology.pdf Graphic file (type pdf)
 <use figures/LPD/realtopology.pdf>
 File: figures/LPD/Realtest/miss_deadline_1.eps Graphic file (type eps)
 <figures/LPD/Realtest/miss_deadline_1.eps>
 File: figures/LPD/Realtest/miss_deadline_2.eps Graphic file (type eps)
 <figures/LPD/Realtest/miss_deadline_2.eps>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: figures/LPD/Realtest/fct_1.eps Graphic file (type eps)
 <figures/LPD/Realtest/fct_1.eps>
 File: figures/LPD/Realtest/fct_2.eps Graphic file (type eps)
 <figures/LPD/Realtest/fct_2.eps>
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -2995,16 +3023,16 @@ File: figures/LPD/discussion/data_mining.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[49] [50] [51] [52]) [53]
+[47] [48] [49]) [50]
 \openout2 = `data/chap05.aux'.
 
  (./data/chap05.tex
-第5章
-[54
+第4章
+[51
 
 
 
-] [55]
+] [52]
 File: figures/FDRC/motivation/miss_deadline.eps Graphic file (type eps)
 <figures/FDRC/motivation/miss_deadline.eps>
 File: figures/FDRC/motivation/fct.eps Graphic file (type eps)
@@ -3015,38 +3043,38 @@ File: figures/FDRC/motivation/bandwidth.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[56] [57]
+[53] [54]
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <7.52812> not available
 
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 179.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 175.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 7.52812pt on input line 179.
+(Font)              scaled to size 7.52812pt on input line 175.
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <8.36461> not available
 
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 179.
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 175.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.36461pt on input line 179.
+(Font)              scaled to size 8.36461pt on input line 175.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.045pt on input line 182.
+(Font)              scaled to size 12.045pt on input line 178.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 8.0pt on input line 182.
+(Font)              scaled to size 8.0pt on input line 178.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.0pt on input line 182.
- [58] [59]
+(Font)              scaled to size 6.0pt on input line 178.
+ [55] [56]
 File: figures/FDRC/model/rate.eps Graphic file (type eps)
 <figures/FDRC/model/rate.eps>
 File: figures/FDRC/model/ratio.eps Graphic file (type eps)
 <figures/FDRC/model/ratio.eps>
- [60]
+ [57]
 File: figures/FDRC/model/window.eps Graphic file (type eps)
 <figures/FDRC/model/window.eps>
 File: figures/FDRC/model/queue.eps Graphic file (type eps)
 <figures/FDRC/model/queue.eps>
 File: figures/FDRC/model/alpha.eps Graphic file (type eps)
 <figures/FDRC/model/alpha.eps>
- [61] [62]
+ [58] [59]
 File: figures/FDRC/evaluation/spineleaf/miss_deadline.eps Graphic file (type ep
 s)
 <figures/FDRC/evaluation/spineleaf/miss_deadline.eps>
@@ -3054,10 +3082,10 @@ File: figures/FDRC/evaluation/spineleaf/fct2.eps Graphic file (type eps)
 <figures/FDRC/evaluation/spineleaf/fct2.eps>
 File: figures/FDRC/evaluation/spineleaf/bandwidth.eps Graphic file (type eps)
 <figures/FDRC/evaluation/spineleaf/bandwidth.eps>
- [63]
+ [60]
 File: figures/FDRC/evaluation/spineleaf/spineleaf.eps Graphic file (type eps)
 <figures/FDRC/evaluation/spineleaf/spineleaf.eps>
- [64] [65]
+ [61]
 File: figures/FDRC/evaluation/spineleaf/miss_deadline_1.eps Graphic file (type 
 eps)
 <figures/FDRC/evaluation/spineleaf/miss_deadline_1.eps>
@@ -3070,6 +3098,10 @@ eps)
 File: figures/FDRC/evaluation/spineleaf/miss_deadline_10.eps Graphic file (type
  eps)
 <figures/FDRC/evaluation/spineleaf/miss_deadline_10.eps>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: figures/FDRC/evaluation/spineleaf/miss_deadline_4.eps Graphic file (type 
 eps)
 <figures/FDRC/evaluation/spineleaf/miss_deadline_4.eps>
@@ -3083,10 +3115,9 @@ File: figures/FDRC/evaluation/spineleaf/miss_deadline_9.eps Graphic file (type
 eps)
 <figures/FDRC/evaluation/spineleaf/miss_deadline_9.eps>
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[66] [67]
+[62] [63] [64]
 File: figures/FDRC/evaluation/spineleaf/miss_deadline_tcp_tight.eps Graphic fil
 e (type eps)
 <figures/FDRC/evaluation/spineleaf/miss_deadline_tcp_tight.eps>
@@ -3096,7 +3127,7 @@ File: figures/FDRC/evaluation/spineleaf/miss_deadline_tcp_mild.eps Graphic file
 File: figures/FDRC/evaluation/spineleaf/miss_deadline_tcp_lax.eps Graphic file 
 (type eps)
 <figures/FDRC/evaluation/spineleaf/miss_deadline_tcp_lax.eps>
- [68]
+ [65]
 File: figures/FDRC/evaluation/spineleaf/FCT_SEARCH_average.eps Graphic file (ty
 pe eps)
 <figures/FDRC/evaluation/spineleaf/FCT_SEARCH_average.eps>
@@ -3106,7 +3137,6 @@ File: figures/FDRC/evaluation/spineleaf/FCT_SEARCH_large.eps Graphic file (type
 File: figures/FDRC/evaluation/spineleaf/FCT_SEARCH_large.eps Graphic file (type
  eps)
 <figures/FDRC/evaluation/spineleaf/FCT_SEARCH_large.eps>
- [69]
 File: figures/FDRC/evaluation/spineleaf/FCT_DATA_average.eps Graphic file (type
  eps)
 <figures/FDRC/evaluation/spineleaf/FCT_DATA_average.eps>
@@ -3116,87 +3146,59 @@ ps)
 File: figures/FDRC/evaluation/spineleaf/FCT_DATA_large.eps Graphic file (type e
 ps)
 <figures/FDRC/evaluation/spineleaf/FCT_DATA_large.eps>
- [70]
+ [66]
 File: figures/FDRC/evaluation/spineleaf/fct.eps Graphic file (type eps)
 <figures/FDRC/evaluation/spineleaf/fct.eps>
 File: figures/FDRC/evaluation/spineleaf/large_fct.eps Graphic file (type eps)
 <figures/FDRC/evaluation/spineleaf/large_fct.eps>
 File: figures/FDRC/evaluation/spineleaf/small_fct.eps Graphic file (type eps)
 <figures/FDRC/evaluation/spineleaf/small_fct.eps>
-File: figures/FDRC/evaluation/Realtest/testbed.eps Graphic file (type eps)
-<figures/FDRC/evaluation/Realtest/testbed.eps>
- [71]
-File: figures/FDRC/evaluation/Realtest/rate.eps Graphic file (type eps)
-<figures/FDRC/evaluation/Realtest/rate.eps>
-File: figures/FDRC/evaluation/Realtest/realqueue.eps Graphic file (type eps)
-<figures/FDRC/evaluation/Realtest/realqueue.eps>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[72] [73]
+[67]
+File: figures/FDRC/evaluation/Realtest/testbed.eps Graphic file (type eps)
+<figures/FDRC/evaluation/Realtest/testbed.eps>
+ [68]
+File: figures/FDRC/evaluation/Realtest/rate.eps Graphic file (type eps)
+<figures/FDRC/evaluation/Realtest/rate.eps>
+File: figures/FDRC/evaluation/Realtest/realqueue.eps Graphic file (type eps)
+<figures/FDRC/evaluation/Realtest/realqueue.eps>
+ [69]
 File: figures/FDRC/evaluation/Realtest/miss_deadline_.eps Graphic file (type ep
 s)
 <figures/FDRC/evaluation/Realtest/miss_deadline_.eps>
 File: figures/FDRC/evaluation/Realtest/fct_.eps Graphic file (type eps)
 <figures/FDRC/evaluation/Realtest/fct_.eps>
 
-Overfull \hbox (1.80669pt too wide) in paragraph at lines 791--803
+Overfull \hbox (1.80669pt too wide) in paragraph at lines 787--799
 []$[]$ $[]$ 
  []
 
-) [74]
-\openout2 = `data/chap08.aux'.
+[70]) [71]
+\openout2 = `data/chap06.aux'.
 
- (./data/chap08.tex
-第6章
-File: figures/DTARGET/picture/system/non-blocking.pdf Graphic file (type pdf)
-<use figures/DTARGET/picture/system/non-blocking.pdf>
-[75
+ (./data/chap06.tex
+第5章
+File: figures/DTARGET/picture/motivation/distribute.pdf Graphic file (type pdf)
+
+<use figures/DTARGET/picture/motivation/distribute.pdf>
+[72
 
 
 
-]
+] [73]
+File: figures/DTARGET/picture/motivation/motivation.pdf Graphic file (type pdf)
+
+<use figures/DTARGET/picture/motivation/motivation.pdf>
+ [74] [75] [76]
+File: figures/others/motivation_color_5.pdf Graphic file (type pdf)
+<use figures/others/motivation_color_5.pdf>
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 36.
- [76] [77]
-LaTeX Font Info:    Calculating math sizes for size <13.04874> on input line 17
-3.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 13.04874pt on input line 173.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.52551pt on input line 173.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.17683pt on input line 173.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 13.04874pt on input line 173.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.52551pt on input line 173.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 7.17683pt on input line 173.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 173.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 173.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 173.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 173.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 173.
-
-[78]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+nput line 196.
+ [77] [78] [79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 []\TU/STSong(0)/m/n/12.045 对 任 意 的 \T1/ntxtlf/m/n/12.045 j$\LMS/ntxsy/m/n/12.04
 5 ^^T$\T1/ntxtlf/m/n/12.045 2m \TU/STSong(0)/m/n/12.045 和 \T1/ntxtlf/m/n/12.045
  S$\LMS/ntxsy/m/n/12.045 ^^Z$\T1/ntxtlf/m/n/12.045 F\TU/STSong(0)/m/n/12.045 ，|
@@ -3204,34 +3206,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 5 º[] ^^T ¹\OT1/ntxtlf/m/n/12.045 2 \LMS/ntxsy/m/n/12.045 ^^@
  []
 
-[79]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 200.
- [80]) [81]
-\openout2 = `data/chap06.aux'.
-
- (./data/chap06.tex
-第7章
-File: figures/DTARGET/picture/motivation/distribute.pdf Graphic file (type pdf)
-
-<use figures/DTARGET/picture/motivation/distribute.pdf>
-[82
-
-
-
-] [83]
-File: figures/DTARGET/picture/motivation/motivation.pdf Graphic file (type pdf)
-
-<use figures/DTARGET/picture/motivation/motivation.pdf>
- [84] [85] [86]
-Missing character: There is no 个 in font ntx-Regular-tlf-ot1!
- [87]
-Missing character: There is no ​ in font ntx-Regular-tlf-t1!
-Missing character: There is no ​ in font ntx-Regular-tlf-t1!
- [88] [89]
-File: figures/DTARGET/picture/system/System.pdf Graphic file (type pdf)
-<use figures/DTARGET/picture/system/System.pdf>
- [90] [91] [92] [93]
+t line 355.
+[81] [82] [83] [84] [85] [86] [87]
 File: figures/DTARGET/picture/evaluation/ex1/total.eps Graphic file (type eps)
 <figures/DTARGET/picture/evaluation/ex1/total.eps>
 File: figures/DTARGET/picture/evaluation/ex1/random_select.eps Graphic file (ty
@@ -3239,7 +3216,7 @@ pe eps)
 <figures/DTARGET/picture/evaluation/ex1/random_select.eps>
 File: figures/DTARGET/picture/evaluation/ex1/diff.eps Graphic file (type eps)
 <figures/DTARGET/picture/evaluation/ex1/diff.eps>
- [94]
+ [88] [89]
 File: figures/DTARGET/picture/evaluation/ex2/M.eps Graphic file (type eps)
 <figures/DTARGET/picture/evaluation/ex2/M.eps>
 File: figures/DTARGET/picture//evaluation/ex2/N.eps Graphic file (type eps)
@@ -3247,11 +3224,7 @@ File: figures/DTARGET/picture//evaluation/ex2/N.eps Graphic file (type eps)
 File: figures/DTARGET/picture//evaluation/ex2/alpha.eps Graphic file (type eps)
 
 <figures/DTARGET/picture//evaluation/ex2/alpha.eps>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[95]
+ [90]
 File: figures/DTARGET/picture/evaluation/ex3/on_off_2.eps Graphic file (type ep
 s)
 <figures/DTARGET/picture/evaluation/ex3/on_off_2.eps>
@@ -3268,32 +3241,32 @@ type pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[96] [97]) [98]
+[91]) [92] [93]
 \openout2 = `data/chap07.aux'.
 
  (./data/chap07.tex
-第8章
-[99
+第6章
+[94
 
 
 
-] [100]
+] [95]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-File: figures/Yosemite/figs/motivation/motivation_color_1.pdf Graphic file (typ
-e pdf)
-<use figures/Yosemite/figs/motivation/motivation_color_1.pdf>
-File: figures/Yosemite/figs/motivation/motivation_color_2.pdf Graphic file (typ
-e pdf)
-<use figures/Yosemite/figs/motivation/motivation_color_2.pdf>
-File: figures/Yosemite/figs/motivation/motivation_color_3.pdf Graphic file (typ
-e pdf)
-<use figures/Yosemite/figs/motivation/motivation_color_3.pdf>
-File: figures/Yosemite/figs/motivation/motivation_color_4.pdf Graphic file (typ
-e pdf)
-<use figures/Yosemite/figs/motivation/motivation_color_4.pdf>
-[101]
+File: figures/Yosemite/figs/motivation/motivationnew_1.pdf Graphic file (type p
+df)
+<use figures/Yosemite/figs/motivation/motivationnew_1.pdf>
+File: figures/Yosemite/figs/motivation/motivationnew_2.pdf Graphic file (type p
+df)
+<use figures/Yosemite/figs/motivation/motivationnew_2.pdf>
+File: figures/Yosemite/figs/motivation/motivationnew_3.pdf Graphic file (type p
+df)
+<use figures/Yosemite/figs/motivation/motivationnew_3.pdf>
+File: figures/Yosemite/figs/motivation/motivationnew_4.pdf Graphic file (type p
+df)
+<use figures/Yosemite/figs/motivation/motivationnew_4.pdf>
+[96]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -3309,12 +3282,12 @@ e pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[102] [103] [104]
+[97] [98] [99]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.0pt on input line 369.
+(Font)              scaled to size 5.0pt on input line 319.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 5.0pt on input line 369.
- [105] [106] [107]
+(Font)              scaled to size 5.0pt on input line 319.
+ [100] [101]
 File: figures/Yosemite/figs/evaluation/ex2/weight_real_type.eps Graphic file (t
 ype eps)
 <figures/Yosemite/figs/evaluation/ex2/weight_real_type.eps>
@@ -3326,7 +3299,7 @@ File: figures/Yosemite/figs/evaluation/ex2/nfake1.eps Graphic file (type eps)
 File: figures/Yosemite/figs/evaluation/ex2/CDF_compare.eps Graphic file (type e
 ps)
 <figures/Yosemite/figs/evaluation/ex2/CDF_compare.eps>
- [108] [109]
+ [102] [103] [104]
 File: figures/Yosemite/figs/evaluation/ex1/evaluation_motivation1.eps Graphic f
 ile (type eps)
 <figures/Yosemite/figs/evaluation/ex1/evaluation_motivation1.eps>
@@ -3339,27 +3312,27 @@ ile (type eps)
 File: figures/Yosemite/figs/evaluation/ex1/evaluation_motivation4.eps Graphic f
 ile (type eps)
 <figures/Yosemite/figs/evaluation/ex1/evaluation_motivation4.eps>
- [110]
+ [105]
 File: figures/Yosemite/figs/evaluation/ex3/fake7.eps Graphic file (type eps)
 <figures/Yosemite/figs/evaluation/ex3/fake7.eps>
 File: figures/Yosemite/figs/evaluation/ex3/fake8.eps Graphic file (type eps)
 <figures/Yosemite/figs/evaluation/ex3/fake8.eps>
 
-Underfull \hbox (badness 6893) in paragraph at lines 570--576
+Underfull \hbox (badness 6893) in paragraph at lines 523--529
 []\TU/STSong(0)/m/n/12.045 权 重 在 \T1/ntxtlf/m/n/12.045 Yosemite \TU/STSong(0)/m
 /n/12.045 调 度 系 统 中 有 重 要 的 作 用，|  在 上 面 的 实 验 中，|  权
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--576
+Underfull \hbox (badness 10000) in paragraph at lines 523--529
 \TU/STSong(0)/m/n/12.045 重 之 间 的 差 是 \T1/ntxtlf/m/n/12.045 1\TU/STSong(0)/m/n/1
 2.045 。| 在 这 组 实 验 中 使 用 \T1/ntxtlf/m/n/12.045 Face-book \TU/STSong(0)/m/n/12.0
 45 的 流 量，|  设 置 权 重 在
  []
 
-[111]
 File: figures/Yosemite/figs/fake/fake1.eps Graphic file (type eps)
 <figures/Yosemite/figs/fake/fake1.eps>
+[106]
 File: figures/Yosemite/figs/performance/nfake5.eps Graphic file (type eps)
 <figures/Yosemite/figs/performance/nfake5.eps>
 File: figures/Yosemite/figs/performance/nfake4.eps Graphic file (type eps)
@@ -3371,14 +3344,14 @@ df)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[112]) [113]
+[107]) [108]
 \openout2 = `data/chap09.aux'.
 
  (./data/chap09.tex
-第9章
+第7章
 File: figures/Yosemite/figs/system/YosemiteSystem.pdf Graphic file (type pdf)
 <use figures/Yosemite/figs/system/YosemiteSystem.pdf>
-[114
+[109
 
 
 
@@ -3393,16 +3366,16 @@ File: figures/Yosemite/figs/system/YosemiteCoflow.pdf Graphic file (type pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[115]
+[110]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[116]
+[111]
 Overfull \hbox (43.18407pt too wide) in paragraph at lines 138--155
  [][] 
  []
 
-[117]
+[112]
 File: figures/Yosemite/figs/evaluation/ex5/real1.eps Graphic file (type eps)
 <figures/Yosemite/figs/evaluation/ex5/real1.eps>
 File: figures/Yosemite/figs/evaluation/ex5/real2.eps Graphic file (type eps)
@@ -3415,87 +3388,87 @@ File: figures/Yosemite/figs/evaluation/ex5/real4.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[118]
+[113]
 File: figures/others/20ms.eps Graphic file (type eps)
 <figures/others/20ms.eps>
 File: figures/others/30ms.eps Graphic file (type eps)
 <figures/others/30ms.eps>
 File: figures/others/40ms.eps Graphic file (type eps)
 <figures/others/40ms.eps>
- [119]
+ [114]
 File: figures/Yosemite/figs/fake/fake5.eps Graphic file (type eps)
 <figures/Yosemite/figs/fake/fake5.eps>
 File: figures/Yosemite/figs/fake/fake6.eps Graphic file (type eps)
 <figures/Yosemite/figs/fake/fake6.eps>
-) [120]
+) [115]
 \openout2 = `data/chap10.aux'.
 
  (./data/chap10.tex
-第10章
-[121
+第8章
+[116
 
 
 
 ]
-Overfull \hbox (65.93137pt too wide) in paragraph at lines 71--79
+Overfull \hbox (20.40764pt too wide) in paragraph at lines 72--80
  [][] 
  []
 
-[122] [123]) [124] (./main.bbl
+[117] [118]) [119] (./main.bbl
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 7.0pt on input line 32.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 7.0pt on input line 32.
- [125
+ [120
 
 
 
 
-] [126]
+] [121] [122]
 Missing character: There is no ∼ in font ntx-Regular-tlf-t1!
- [127]) [128]
+ [123]) [124]
 \openout2 = `data/ack.aux'.
 
  (./data/ack.tex
-[129
+[125
 
 
 
-]) [130
+]) [126
 
 
 ]
 \openout2 = `data/resume.aux'.
 
- (./data/resume.tex [131
+ (./data/resume.tex [127
 
 
 
 
-]) [132]
+]) [128]
 \tf@thm=\write5
 \openout5 = `main.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 82.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 82.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
  (./main.aux (./data/chap01.aux)
-(./data/chap02.aux) (./data/chap03.aux) (./data/chap04.aux) (./data/chap05.aux)
-(./data/chap08.aux) (./data/chap06.aux) (./data/chap07.aux) (./data/chap09.aux)
-(./data/chap10.aux) (./data/ack.aux) (./data/resume.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 82.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 82.
+(./data/chap02.aux) (./data/chap04.aux) (./data/chap05.aux) (./data/chap06.aux)
+(./data/chap07.aux) (./data/chap09.aux) (./data/chap10.aux) (./data/ack.aux)
+(./data/resume.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 81.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 81.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 38175 strings out of 493010
- 736479 string characters out of 6134663
- 818876 words of memory out of 5000000
- 41389 multiletter control sequences out of 15000+600000
- 725425 words of font info for 311 fonts, out of 8000000 for 9000
+ 38196 strings out of 493010
+ 739854 string characters out of 6134663
+ 812599 words of memory out of 5000000
+ 41428 multiletter control sequences out of 15000+600000
+ 728233 words of font info for 312 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 66i,15n,96p,10436b,775s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,15n,96p,10436b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (145 pages).
+Output written on main.pdf (143 pages).

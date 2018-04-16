@@ -5,7 +5,7 @@
 因此研究者们提出了许多传输协议（例如，DCTCP，D$^2$TCP，L$^2$DCT）来对TCP进行补充。
 其中，D$^2$TCP等协议将流的截止期限纳入拥塞窗口调整过程，以保证流在截止期限之前传输完成。
 在数据中心中，短流常常需要较短延迟，因而，L$^2$DCT等协议在计算拥塞窗口调整因子时考虑流大小，以此保证短流的吞吐量和延迟。
-这两种方法在一定的场景下运行良好，但依旧存在一些不足：
+这两种方法在一定的场景下性能良好，但依旧存在一些不足：
 首先，这两种方法只能减小流错失期限的百分比或者能够减小流平均完成时间，但是不能够同时优化这两个目标。
 其次，大多数方法都需要预知流的信息（例如截止期限，流大小），
 但是对于很多应用，流大小以及流截止期限这些信息很难预先得知。
@@ -35,11 +35,11 @@ DCTCP采用大多数现代交换机支持的ECN标记机制\cite{DCTCP}，
 接收端收到所有的数据包后，如果有被标记CE的数据包，那么回复给发送端的ACK就会被标记ECN。
 最后发送端统计上一个RTT中收到的ACK被标记的ECN的比例，然后计算链路拥塞程度，最后根据拥塞程度调整拥塞窗口。
 DCTCP通过使的交换机缓冲区队列维持在较短水平上，从而可以减小排队延迟，同时可以维持高链路利用率。
-但是，DCTCP不考虑流的期限问题，它对所有流都公平对待，这样会导致许多对延迟敏感的流错过期限\cite{D2TCP,D3}。
+但是，DCTCP不考虑流的期限问题，其对所有流都公平对待，这会导致许多对延迟敏感的流错过期限\cite{D2TCP,D3}。
 针对此，业界提出两类方法来弥补TCP的不足：
 
 \textbf{（1）给流设置显式的期限。} 
-例如D$^3$\cite{D3}，D$^2$TCP\cite{D2TCP}和LPD\cite{LPD}这几个方法是
+例如D$^3$\cite{D3}，D$^2$TCP\cite{D2TCP}和LPD\cite{LPD}是
 从用户态给应用的数据流设置期限，数据流带宽由网络拥塞程度和期限共同决定。
 截止期限近的数据流得到的带宽比期限远的流得到的带宽多，
 因此，截止期限近的流和截止期限远的流都能在截止时间之前完成。
@@ -70,7 +70,7 @@ DCTCP通过使的交换机缓冲区队列维持在较短水平上，从而可以
 另一方面，这种方法间接给短流设置了更高的优先级，短流经常有期限限制，短流能获得较多的带宽，
 进而能够在截止时间之前完成，同时优化了流的平均完成时间。
 基于此，本章提出了基于流持续时间的速率控制算法（Flow Duration Rate Control，简称FDRC）。
-本章将FDRC实现在ns-2\cite{ns2}和Iinux 内核3.2.61上。
+本章将FDRC实现在ns-2\cite{ns2}和Linux 内核3.2.61上。
 实验结果表明FDRC的性能比D$^2$TCP提高了$30\%$，比DCTCP提高了2$\times$。
 本章中主要做了以下的工作：
 
@@ -79,13 +79,10 @@ FDRC可以使更多流达到最终期限的限制，同时有助于减少流平�
 FDRC可以在事先不知道流信息的情形下，有效的减少流错过期限数目的百分比。
 
 （2）在ns-2中评估FDRC，然后用DCTCP，D$^2$TCP，L$^2$DCT，LPD和pFabric与之对比。
-最后，在linux内核中实现FDRC，并构建小型数据中心测试FDRC，进而评估FDRC的性能。
+最后，在Linux内核中实现FDRC，并构建小型数据中心测试FDRC，进而评估FDRC的性能。
 
 
-\section{相关工作和研究动机}
-\label{FDRC:background}
-\subsection{相关工作}
-
+\section{研究动机}\label{fdrc_motivation}
 业界已经提出一系列方法来保证数据中心流传输延迟，
 根据这些方法特性可以分为三类，第一类是基于TCP的方法，例如
 DCTCP\cite{DCTCP}，D$^2$TCP\cite{D2TCP}以及LPD\cite{LPD}等，
@@ -102,11 +99,10 @@ DCTCP\cite{DCTCP}，D$^2$TCP\cite{D2TCP}以及LPD\cite{LPD}等，
 都需要预知流的信息（流大小，截止期限，剩余流大小，剩余时间等）或者对网络设备进行修改。
 但是在数据中心的流是混合了延迟敏感流，带宽敏感流和长的背景流。
 给流设置截止期限，根据截止期限区分优先级，能够减少流错失期限的比例。
-根据流大小进行调整，只能够优化流完成时间。
-但是当前没有一种方法能够同时满足这两者的需求，此外这些方法还需要预先得知流信息。
-实际需要一种无须知道流的信息就能够优化有截止期限的流和流完成时间。
+根据流大小进行调整，只能够优化流完成时间。 
+但是当前没有一种方法能够同时满足这两者的需求，此外这些方法还需要预先得知流信息，
+需要一种无须知道流的信息就能够优化有截止期限的流和流完成时间。
 
-\subsection{研究动机}\label{fdrc_motivation}
 
 \begin{figure}[h]
 \centering
@@ -169,9 +165,9 @@ L$^2$DCT 将导致流平均完成时间较短，但是对于有显式期限的�
 对于有期限的流也是一种较好的优化方法。
 
 
-\section{FDRC策略}
+\section{基于流持续时间的速率控制（FDRC）策略}
 
-\subsection{基于流持续时间的速率控制策略}
+\subsection{基于流持续时间的速率控制（FDRC）策略}
 
 \begin{algorithm}
 \KwIn{流启动时刻 $time\_start$，当前时刻  $time\_now$ }
@@ -200,7 +196,6 @@ $threshold\_tight$和$threshold\_lax$是时间阈值，$DMAX$和$DMIN$是期限�
 算法\ref{factor_algorithm}在每个RTT执行一次。
 随着时间的推移，流优先级下降，因此，长的背景流的带宽平均值小于短流的带宽，流完成时间长。
 
-\subsection{FDRC 协议}
 FDRC基于DCTCP，在交换机端使用ECN标记模式。
 交换机预先设置一个标记的阈值$K$。
 当队列长度大于交换机的阈值$K$时，到达的数据包将被标记CE。
@@ -246,7 +241,7 @@ $R_{1}$ 和 $R_{2}$ 表示 $flow_1$ 和 $flow_2$的速率。
 根据（\ref{ca}），滑动窗口每个RTT增加$(1-f)$，
 因此得到最大的滑动窗口和最小滑动窗口的关系：$w_{max}=w_{min}+N \times(1-f)$。
 当出现拥塞时候，窗口减小到$w_{min}$，
-根据（\ref{ca})，有$w_{min}=w_{max}*(1-f)$。
+根据（\ref{ca})，有$w_{min}=w_{max}\times(1-f)$。
 令$w_{1}$是flow$_1$的最大窗口，
 $w_{2}$是flow$_2$的最大窗口。
 根据平均滑动窗口，计算两条流的平均发送速率比：
@@ -277,9 +272,6 @@ $w_{2}$是flow$_2$的最大窗口。
 \end{figure}
 
 
-
-
-
 从(\ref{fdrc-rate-ratio2})得知，对于两条流的窗口调整因子很小的场景，两条流的传输速率和窗口调整因子成反比。
 为了测试模型的准确度，分别在t=0s和t=0.5s启动两条长流（其中flow$_1$的启动时间$start\_time = 0s$，flow$_2$的启动时间$start\_time = 0.5s$）。
 设定阈值$threshold\_lax$ = 0.6s，阈值$threshold\_tight$= 0.3s，$DMIN = 0.05$，$DMAX = 0$。
@@ -300,7 +292,7 @@ $t = 0.8s$后，窗口调整因子开始下降。
 假设N个并发的流通过容量为C pkts / sec的瓶颈链路传递给同一个接收者节点，假设传输延迟为pd，
 设置（\ref{Model-CA-eq}）中$f_1(\alpha)=f_2(\alpha)=\alpha \times d$，
 同时把$f_1(\alpha)$和$f_2(\alpha)$带入(\ref{fluid-model_window})$\sim$(\ref{fluid-model-q})，
-并且改动(\ref{Model-alpha-eq})中数据包标记的方法，并且增加$\alpha$标记方法，那么FDRC-fluid模型可以描述为：
+并且增加$\alpha$标记方法，那么FDRC-fluid模型可以描述为：
 
 \begin{align}
 &\frac{d\alpha_i}{dt}=\frac{g}{R(t)}(p(t-R^*)-\alpha_i(t)) \label{FDRC-model_alpha} \\
@@ -394,7 +386,7 @@ $DMIN$和$DMAX$应该满足：
 之后，验证FDRC对流完成时间的优化，实验结果发现，对于流完成时间，FDRC比DCTCP降低了约$50\%$。
 最后，在小型数据中心测试平台上评估FDRC的性能。
 
-\subsection{解决研究动机提出的问题}
+\subsection{FDRC对混合场景优化}
 \begin{figure}[h]
 \centering
 \subcaptionbox{流错失期限百分比}
@@ -408,7 +400,7 @@ $DMIN$和$DMAX$应该满足：
 \end{figure}
 
 
-在这一节中，首先解决动机部分\ref{fdrc_motivation}提出的问题。
+本节首先解决动机部分\ref{fdrc_motivation}提出的问题。
 对于FDRC，因为数据中心，流的期限通常在10ms至30ms之间，
 因此在实验中，设置阈值$threshold\_lax$= 30ms，阈值$threshold\_tight$= 10ms。 
 根据(\ref{DMAX_DMIN_RANGE})，可以设置 $DMAX = 0.8$，$DMIN = 0.3$。
@@ -437,7 +429,7 @@ FDRC性能好$20\%$，相比于L$^2$DCT，FDRC性能好$10\%$。
 所以短流的平均带宽比长流的平均带宽要大，
 因而，FDRC近似实现短流优先策略，流平均完成时间小。
 
-\subsection{真实流量和拓扑下仿真}
+\subsection{仿真仿真}
 
 本部分用真实的数据中心流量和复杂的数据中心拓扑来测试FDRC的性能。
 在ns-2中构建如图\ref{FDRC-DataCenterTop-fig}所示的Spine-Leaf拓扑。
@@ -488,6 +480,8 @@ FDRC需要四个重要的参数。
 同时，在每组实验中，使用DCTCP，D$^2$TCP，LPD-e与FDRC作对比。
 
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{0pt} 
+\setlength{\belowcaptionskip}{1pt} 
   \centering%
   \subcaptionbox{x=1\label{LPD_Motivation:subfig1}} %标题的长度，超过则会换行，如下一个小图。
     {\includegraphics[width=0.5\columnwidth]{figures/FDRC/evaluation/spineleaf/miss_deadline_1.eps}}%
@@ -503,6 +497,8 @@ FDRC需要四个重要的参数。
 \end{figure}
 
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{0pt} 
+\setlength{\belowcaptionskip}{1pt} 
   \centering%
   \subcaptionbox{x=1\label{LPD_Motivation:subfig1}} %标题的长度，超过则会换行，如下一个小图。
     {\includegraphics[width=0.5\columnwidth]{figures/FDRC/evaluation/spineleaf/miss_deadline_4.eps}}%

@@ -3,23 +3,24 @@
 现在很多在线应用部署在数据中心，因此数据中心网络的性能和底层技术吸引了越来越多的研究者的兴趣。
 为了达到更好的网络性能，
 近期的研究从不同角度优化数据中心网络流量传输和调度，并且设计各种路由和传输方案。
-特别是对于必须及时为用户服务的应用，数据流的传输应尽快的完成，有的必须在截止时间之前完成，
-最近业界出现了一系列的考虑流传输期限的网络流量控制策略。
-在本章中，我们主张在设计数据流传输方案时，
+特别是对于必须及时为用户服务的应用，有的必须在截止时间之前完成，否则会影响用户体验。
+传统的传输策略TCP并不能满足数据中心应用的需求。
+针对此，最近业界出现了一系列的考虑流传输期限的网络流量控制策略。
+尽管这些方案能够在一定程度上提升数据中心应用传输的性能，然而，当网络拥塞程度严重时，这些策略基本失效，不再根据期限进行带宽区分。
+本章主张在设计数据流传输方案时，
 应该遵循一个简单的原则：
 拥有不同截止期限（deadline）的数据流在带宽分配和占用上应该被区分开，
-网络负载越重，数据流越应该被区分。
-我们认为在设计流量控制策略时应该遵循这个原则。
+并且网络负载越重，流带宽越应被区分。
 
-根据这个原则，我们并提出了一种简单的拥塞控制算法－正比负载差分策略
+根据此原则，本章并提出了简单的拥塞控制算法－正比负载差分策略
 （Load Proportional Differentiation，简称LPD）作为其应用。
-我们已经在不同的拓扑和负载情况下评估了LPD。
-我们发现与D$^2$TCP（最先进的基于期限拥塞控制滑动窗口策略）相比，
-使用LPD错过最后期限的数据流的比例减少25$\%$以上。
+同时本章在不同的拓扑和负载情况下评估LPD。
+本章发现与D$^2$TCP（最先进的基于期限拥塞控制滑动窗口策略）相比，
+LPD错过最后期限的流的比例减少25$\%$以上。
 与Karuna相比，LPD平均有5$\%$的性能损失。
 但是在拥塞严重的情况下，LPD性能比Karuna高5$\%$ $\sim$10$\%$。
-事实上 “越拥塞，越区分”是一个通用的原则，它也可以用于其他目标的优化。
-我们考虑优化流平均完成时间。
+事实上 “越拥塞，越区分”是一个通用的原则，也可以用于其他目标的优化，
+本章考虑优化流平均完成时间。
 与基于窗口的协议L$^2$DCT相比，LPD可以将流平均完成时间减少30$\%$。
 和最先进的流平均完成时间优化策略pFabric相比，LPD只有20$\%$的性能损失。 
 
@@ -29,38 +30,37 @@
 目前，越来越多的服务和应用，如网络搜索和社交网络被托管在数据中心\cite{chowdhury2014efficient,chen2016scheduling,zhang2016fdrc,chowdhury2012coflow,chowdhury2015efficient}。
 由于数据中心网络的性能，特别是数据传输时延，吞吐量等直接影响到用户获得的服务的质量，
 因此需要设计新的网络协议，充分利用数据中心提供的网络资源。
-在数据中心网络（DCN）中，短流需要低延迟，
+在数据中心网络（DCNs）中，短流需要低延迟，
 长流需要高吞吐量\cite{DCTCP,chen2016scheduling}。
-为了满足这些要求，最近的研究提出了各种各样的为数据中心量身定做的流量调度策略。
+为了满足这些要求，最近的研究提出了各种针对数据中心流量进行控制的策略。
 
 
 特别是，在数据中心普遍部署了一类称为在线数据密集型（Online Data Intensive，简称OLDI)\cite{OLDI,D2TCP} 的重要应用。
-这些必须及时的为用户提供服务。
-即使应用增加1毫秒的延迟也会对企业利润产生影响\cite{Latency}。
-这些应用通常需要查询和收集来自节点的反馈结果。
-为了满足应用的响应期限，即使某些应用的计算结果尚未计算完毕，
-应用程序也可能向用户发送不完整的反馈结果。
-这进一步要求应用程序数据传输在截止时间之前完成，
-因为错过期限的数据流越少，服务质量越高，用户的体验越好。
-像TCP或DCTCP这类没有考虑期限的传输方案在这些应用中效果不佳，
-而很多现代数据中心流量控制算法\cite{D3, D2TCP}或流量调度算法\cite{PDQ}中明确地考虑了截止日期。
+这类应用需要为用户提供实时服务。
+实时服务对延迟要求很高，即使增加1毫秒的延迟也会对企业利润产生影响\cite{Latency}。
+实时应用通常需要查询和收集来自节点的反馈结果。
+为了不影响用户体验，反馈结果需要在截止期限之前传输完成。
+如果某些应用的计算结果尚未计算完毕开始传输，应用会向用户发送不完整的反馈结果，这会影响最终反馈结果，从而影响用户体验。
+错过期限的流越少，服务质量越高，用户的体验越好。
+像TCP或DCTCP这类没有考虑期限的传输方案会导致错过期限的流数目较多，
+而当前很多数据中心流量控制算法\cite{D3, D2TCP}或流量调度算法\cite{PDQ}中明确地考虑了截止期限。
 
 
-在本章中，我们重点研究数据中心基于期限的流量控制算法。
-我们基于D$^2$TCP\cite{DCTCP} 开始我们的工作。
-通过仔细研究不同业务负载情况下的D$^2$TCP性能，
-我们注意到，当网络负载很高的情形下，D$^2$TCP退化为DCTCP，并且不再是基于期限的拥塞控制策略。
-考虑到这一点，我们认为当网络负载较重时，应该为截止期限较近的流分配较多的网络带宽，
-并提出一个简单的期限感知速率控制原则：
-拥有不同的期限的数据流在带宽分配上应该有区分，
-并且网络负载越重，区分程度越大。
+
+本章重点研究了数据中心基于期限的流量控制算法。
+本章首先分析不同业务负载情况下D$^2$TCP性能，
+当网络负载很高的情形下，D$^2$TCP退化为DCTCP，并且不再是基于期限的拥塞控制策略。
+基于此，本章认为当网络负载较重时，应该为截止期限较近的流分配更多带宽。
+本章提出一个简单的基于期限的速率控制方案：
+拥有不同期限的流在带宽分配上应该被区分，
+并且网络负载越重，期限不同流的带宽差异程度越大。
 
 
-为了证明这个原理的有效性，我们还设计了一个简单的基于期限的拥塞速率控制算法，
-正比负载差分策略（Load Proportional Differentiation,简称 LPD）作为其应用。 
+为证明此原则的有效性，本文设计了一个简单的基于期限的拥塞速率控制算法－
+正比负载差分策略（Load Proportional Differentiation，简称 LPD）作为其应用。 
 LPD的基本思想是：使用截止期限来调节拥塞窗口时，网络负载应作为调整因子引入其中，
-数据流的调整程度与网络负载成正比。
-我们使用典型的数据中心拓扑和各种业务负载场景来评估LPD的性能，
+数据流的区分调整程度与网络负载成正比。
+本文使用典型的数据中心拓扑和各种业务负载场景来评估LPD的性能，
 并将其与一些最新的数据中心流量控制算法（例如DCTCP \cite{DCTCP} ，D$^2$TCP \cite{D2TCP}和L$^2$DCT \cite{L2DCT}，Karuna\cite{chen2016scheduling}）进行对比。
 实验结果显示，LPD性能总是能超过这些策略，LPD能使更多流在截止期限之前完成。
 与D$^2$TCP相比，LPD可以将错过最后期限的流的比例减少25$\%$以上。
@@ -73,7 +73,7 @@ LPD的基本思想是：使用截止期限来调节拥塞窗口时，网络负�
 然后将其性能与最先进的基于窗口的优化流平均完成时间的协议L$^2$DCT进行比较，
 发现LPD比L$^2$DCT在流平均完成时间方面缩短30$\%$。
 即使与最先进的优化流平均完成时间的方法pFabric \cite{pFabric}相比，LPD的性能差20$\%$。
-本文随后在ns2 \cite{ns2,LPD-sim-code}上和Linux kernel 3.2.61 \cite{LPD-code}中实现了LPD。
+本文随后在ns2 \cite{ns2,LPD-sim-code}上和Linux kernel 3.2.61 \cite{LPD-code}中实现并且评估LPD。
 
 本章的主要工作如下：
 
@@ -86,45 +86,23 @@ LPD的基本思想是：使用截止期限来调节拥塞窗口时，网络负�
 （4）在ns-2和linux内核3.2.61中实现LPD，并且把LPD的性能和当前最流行的基于期限的速率控制策略进行对比。
  
  
- LPD的模拟代码可以在\cite{LPD-sim-code}下载，
-LPD的Linux内核源代码可以在\cite{LPD-code}中找到。
+为了保证本章的实验可以重复，本文同时对LPD代码开源。
+LPD的模拟代码可以在\inlinecite{LPD-sim-code}下载，
+LPD的Linux内核源代码可以在\inlinecite{LPD-code}中找到。
 本文还根据“越拥塞，越区分”的原则设计了其他的拥塞控制策略，
 并且说明此策略是具有普遍性的。
  
- \section{相关工作和研究动机}
- \label{sec_LPD:Background}
- \subsection{相关工作}
- 表\ref{LPD-related}表示的是流级别的各类传输方案。
-  \begin{table}[h]
-\centering
-\caption{流级别优化方案}\label{LPD-related}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|c|c|} \hline
-\setlength{\tabcolsep}{10pt}
- 时间& 流控 &  调度 \\ \hline
-2010 &DCTCP$_{\left[sigcomm\right]}$ & \\ \hline
-2011 &&D$^3_{\left[sigcomm\right]}$ \\ \hline
-2012 &D$^2$TCP$_{\left[sigcomm\right]}$&PDQ$_{\left[sigcomm\right]}$ \\ \hline
-2013 & L$^2$DCT$_{\left[Infocom\right]}$，MPTCP$_{\left[Hotnets\right]}$&pFabric$_{\left[sigcomm\right]}$ \\ \hline
-2014 &TIMELY$_{\left[sigcomm\right]}$& \\ \hline
-2015 &    & PASE$_{\left[NSDI\right]}$，QJUMP$_{\left[NSDI\right]}$，FastPass$_{\left[sigcomm\right]}$\\ \hline
-2016 &Karuna$_{\left[sigcomm\right]}$& \\ \hline
-\end{tabular}
-\end{table}
-可以发现，通过流量控制来优化传输延迟的方案有DCTCP\cite{DCTCP}，D$^2$TCP\cite{D2TCP}，TIMELY\cite{mittal2015timely}，Karuna\cite{chen2016scheduling}，MPTCP\cite{wischik2011design}。通过流量调度的方案有D$^3$\cite{D3}，PDQ\cite{PDQ}，pFabric \cite{pFabric}，
-PASE\cite{PASE}，QJUMP\cite{grosvenor2015queues}，FastPass\cite{perry2015fastpass}。
-
- \subsection{研究动机}
-  \label{sec_LPD:Motivation}
- 
- D$^2$TCP给不同的数据流分配不同大小的带宽，
- 使期限近的流获得更多带宽。
-本文认为这是一个重要的尝试，但是在拥塞控制中仅仅考虑期限是不够的，网络拥塞也应被考虑。
+ \section{研究动机}
+ \label{sec_LPD:Motivation} 
+D$^2$TCP给不同的数据流分配不同大小的带宽，
+使期限近的流获得更多带宽。
+本文认为这是一个重要的尝试，
+但是在拥塞控制中仅仅考虑期限是不够的，网络拥塞也应被考虑。
  
  
  \begin{table}[h]
 \centering
-\caption{期限之后，未传输完的数据量}\label{flowtable}
+\caption{D$^2$TCP和DCTCP仿真结果对比}\label{flowtable}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|c|c|c|c|c|c|} \hline
 \setlength{\tabcolsep}{10pt}
@@ -138,6 +116,8 @@ flow 4  (40 MB, 800 ms)   &0 MB    &0 MB \\ \hline
 
 
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{0pt} 
+\setlength{\belowcaptionskip}{1pt} 
   \centering%
   \subcaptionbox{流的带宽\label{LPD_Motivation:subfig1}} %标题的长度，超过则会换行，如下一个小图。
     {\includegraphics[width=0.5\columnwidth]{figures/LPD/bandwidth.eps}}%
@@ -163,69 +143,57 @@ flow 4  (40 MB, 800 ms)   &0 MB    &0 MB \\ \hline
 \end{figure}
 
 
-
-为了验证D$^2$TCP存在的问题，本部分使用ns-2进行如下仿真：假设四条流通过瓶颈带宽为1Gbps链路，
-流同时启动，大小分别为8,16,32和40 MB，截止期限分别为200,400,600和800 ms，
-设置RTT为100 us。
-如果使用TCP，那么可以使得所有流在最晚的截止期限（800ms)之前完成。
-流传输结果如表\ref{flowtable}第四列所示，
-表\ref{flowtable}中每个数字表示在流截止期限到达时剩余多少数据未被发送完成
+为了验证D$^2$TCP存在的问题，使用ns-2进行如下仿真：四条流通过瓶颈带宽为1Gbps的链路，
+流同时启动，大小分别为8,16,32和40 MB，截止期限分别为200，400，600和800 ms，设置RTT为100 us。
+事实上，如果使用TCP，则可以使得所有流在800ms之前完成。
+使用DCTCP和D$^2$TCP的流传输结果如表\ref{flowtable}所示。
+表\ref{flowtable}中第2列和第3列的每个数字表示DCTCP和D$^2$TCP在流截止期限到达时未发送的数据量
 （传输完成后，数据流会被强制停止）。
-把非基于期限调整的策略DCTCP也放在最后进行比较。
-从表\ref{flowtable}可以看到，尽管D$^2$TCP在流截止时间（deadline）之前传输的数据比DCTCP多，
-但不能有效地减少错失期限流的数目。
-在这两种情况下，只有flow$_4$在截止时间之前完成。
-根据实验结果显示，在一些场景下，D$^2$TCP的性能和DCTCP的性能类似。 
-
-图\ref{LPD_Motivation}显示了D$^2$TCP传输的更多细节，
-D$^2$TCP使用w = w$\times$（1-$\alpha^d$/ 2）来调整其拥塞窗口w，
-其中$\alpha$是估计的拥塞程度，d是期限迫近因子。
-图\ref{LPD_Motivation}（a）描绘了flow$_1$和flow$_4$的带宽。
-可以发现，大部分时间流之间带宽差别很小。
-图\ref{LPD_Motivation}（b）是flow$_1$和flow$_4$在最初200ms期间的拥塞窗口大小，
-除了快接近最后的10ms时，flow$_1$的窗口会比flow$_4$大很多之外，大部分时间，flow$_1$和flow$_4$的差距不大。
-但是，图\ref{LPD_Motivation}（c）所示，flow$_1$和flow$_1$的期限迫近因子相差很大，
-特别是在100 ms到200 ms的时间内。
-为了完整性，图\ref{LPD_Motivation}（d）也绘制了$\alpha$，它表示flow$_1$和flow$_4$对拥塞程度的一种评估。
+从表\ref{flowtable}可以看到，尽管D$^2$TCP在流截止期限之前传输的数据比DCTCP多，但不能有效地减少错失期限流的数目。
+无论DCTCP还是D$^2$TCP，只有flow$_4$在截止期限之前完成。
+根据实验结果显示，当拥塞程度严重时，D$^2$TCP的性能和DCTCP的性能基本相同。 
+图\ref{LPD_Motivation}显示了传输的更多细节，
+图\ref{LPD_Motivation}（a）描绘了flow$_1$和flow$_4$的带宽：大部分时间内流之间带宽差别很小。
+图\ref{LPD_Motivation}（b）是flow$_1$和flow$_4$在最初200ms期间的拥塞窗口大小：
+除了快接近最后的10ms时，flow$_1$的窗口会比flow$_4$大很多之外，大部分时间，flow$_1$和flow$_4$的窗口差别不大。
+图\ref{LPD_Motivation}（c）是flow$_1$和flow$_4$的期限迫近因子：，二者的期限迫近因子相差很大，特别是在100 ms到200 ms的时间内。
+图\ref{LPD_Motivation}（d）是表示flow$_1$和flow$_4$对拥塞程度的一种评估：二者估算的拥塞程度基本相同。
+可以发现，尽管flow$_1$和flow$_4$有相同的拥塞程度，不同的截止期限，但是二者的期限因子基本相同。
  
  
  \section{“越拥塞，越区分”的设计原则}
  \label{sec_LPD:MORE_LOAD}
- 本章的工作主要借鉴DCN中较早的速率控制方案，如DCTCP，D$^2$TCP和L$^2$DCT等。
- 特别是D$^2$TCP，通过将期限控制函数与DCTCP相结合，本质上给不同的数据流分配不同的带宽，
- 从而相同条件下期限紧迫的流获得更多的带宽。
- 正如\ref{sec_LPD:Motivation}节所示，本文认为仅仅通过期限对数据流进行带宽调整是不够的。 
- 在\ref{sec_LPD:gamma}节中，本文分析出现这种不好的情况的根本原因。 
- 在\ref{sec_LPD:principle}节，本文提出基于截止期限的速率控制策略的设计原则，
- 并且使用数学语言对之进行描述。
- 
-\subsection{分析伽马校正函数}
-\label{sec_LPD:gamma}
+D$^2$TCP试图将截止期限引入到拥塞窗口计算中，
+进而期限不同的流计算得到不同的期限因子。
+本章首先发现和分析D$^2$TCP在重度拥塞时失效的原因。
+然后提出截止期限的速率控制策略的设计原则，并对之进行数学描述。
+最后本章提出正比负载差分策略LPD，并对之进行简单分析。
 
-本部分对D$^2$TCP进行深入探究。
+\subsection{D$^2$TCP分析}
+\label{sec_LPD:gamma}
 D$^2$TCP的核心思想是在惩罚函数中使用伽马校正函数p($\alpha$,d)=$\alpha^d$，其中0 <$\alpha$<1。
 图 \ref{penalty-fig}(a)显示的是d = 0.4和d = 0.6时伽马校正函数的曲线。
-可以发现，当$\alpha$增加时，p也增加，因此可以认为网络负载加重，拥塞窗口变小。
-这个性质对于基于期限的速率控制确实是合理的和必要的。
-然而，如果考虑惩罚函数的差异，
+可以发现，当$\alpha$增加时，较正函数(p)增加，即网络越拥塞，滑动窗口减小越多，流带宽减小越多。
+然而，如果考虑惩罚函数的差异，即相同拥塞情形下的不同期限的流较正函数：
 例如$pd(\alpha, d_{1}, d_{2})=p(\alpha, d_{1})-p(\alpha,d_{2})=\alpha^{d_{1}}-\alpha^{d_{2}}$，
-其中$d_{1}$ <$d_{2}$，可以发现pd首先随$\alpha$的增加而增加，
+其中$d_{1}$ <$d_{2}$。
+发现pd首先随$\alpha$的增加而增加，
 在$\alpha$经过某一点（图\ref{penalty-fig}（b）中0.2左右）之后减小。
 例如，pd（0.4,0.4,0.6）= 0.116，
 pd（0.6,0.4,0.6）= 0.079，
 而pd（0.9,0.4,0.6）= 0.019。
 因而，网络拥塞程度较重的环境中，D$^2$TCP对期限不同数据流的调整能力基本失效，
-变成一个公平分配方案，这不符合基于期限的拥塞控制策略的要求。
+不再是基于拥塞程度进行速率控制的方法。
  
  
- 解释D$^2$TCP在网络重度拥塞时失效的原因。
+解释在研究动机的实验中，D$^2$TCP在网络重度拥塞时失效的原因：
 在150ms到160ms的时间间隔，$\alpha$从0.4增加到0.6，flow$_1$和flow$_4$的紧急因子分别是$d_1$ = 0.6和$d_4$ = 0.4，
 因而flow$_1$比flow$_4$更紧急。
 然而，pd（0.6，$d_4$，$d_1$）= 0.079，pd（0.4，$d_4$，$d_1$）= 0.116。 
 如图\ref{LPD_Motivation}（b）所示，当网络拥塞程度变大时，
-flow$_1$的窗口和flow$_4$的拥塞窗口大小基本相同（注意，pd（0.9，$d_4$，$d_1$）=0.019）。 
+flow$_1$的窗口和flow$_4$的拥塞窗口大小基本相同，此时pd（0.9，$d_4$，$d_1$）=0.019，即此时二者计算的期限因子基本相同。
 因而，flow$_1$在截止期限之前无法获得足够的带宽，从而无法在截止期限之前完成。
-实际中，需要不同截止期限的流获得不同的带宽，从而流均在截止期限之前完成。
+实际中，当网络拥塞程度更严重时，更需要不同截止期限的流应获得不同的带宽，从而流均可在截止期限之前完成。
 
 
 \subsection{基于截止期限的速率控制策略设计原则}
@@ -242,24 +210,20 @@ flow$_1$的窗口和flow$_4$的拥塞窗口大小基本相同（注意，pd（0.
 PI表示数据流速率应该根据流的截止期限进行区分：考虑两条大小相同的数据流（长度一致），
 截止期限近的流应该使用比截止期限远的流获得更多的带宽，
 从而流在截止期限之前完成的概率会变大。
-事实上，PI在新的基于TCP的拥塞控制方案（如$D^3$或D$^2$TCP）被采纳。
+PI已经在新的基于TCP的拥塞控制方案（如D$^3$和D$^2$TCP）被采纳。
 但是，当前基于TCP的拥塞控制方案，忽略了拥塞和数据流带宽差异之间的关系。
-
 
 
 PD表示网络负载越重，流之间带宽差异性应该越大。
 与网络负载较轻时相比，网络负载较重时，每条数据流获得的带宽都会减少。
-从而，错失截止期限的可能性会变大。 
+从而，流错失期限的可能性会变大。 
 因此，为了尽可能的让数据流在截止期限之前完成，
 期限近的流应从期限远的数据流抢夺带宽。
  
 因此，截止期限不同的两条流获得带宽的差异性在拥塞程度大的情况下应该更大。
 通过此方式，截止期限近的流和截止期限远的流都能在截止时间之前完成。
-事实上，当前基于截止期限的拥塞控制策略忽略网络拥塞和期限的关系。
-在形式上，假设r（$\alpha$，d）表示在网络拥塞情形为$\alpha$（0 <$\alpha$<1），紧急因子为d（d> 0）的情形下流的带宽。
-d越大表示期限因子越大，$\alpha$越大表示网络越拥塞。
-
-定理\ref{theorem-principle}是对PI和PD的数学描述。
+事实上，当前基于截止期限的拥塞控制策略忽略网络拥塞和不同期限的流带宽差异性之间的关系。
+在形式上，假设r（$\alpha$，d）表示在网络拥塞情形为$\alpha$（0 <$\alpha$<1），紧急因子为d（d> 0）的情形下流的带宽，$\alpha$越大表示网络越拥塞。定理\ref{theorem-principle}是对PI和PD的数学描述：
 
 \begin{lemma}\label{theorem-principle}
  $r$ 遵守PI和PD的充分必要条件是 $\frac{\partial{r}}{\partial{d}}>0$, 
@@ -295,8 +259,7 @@ $\frac{\partial{dr(\alpha, d_{1}, d_{2})}}{\partial{\alpha}}>0$
 $\frac{\partial^{2}{r}}{\partial{\alpha}\partial{d}} \ge 0$ （但是不能恒为0）
 \end{proof}
 
-上面提出的原则简单并且有通用型，
-而在使用中，如何设置流的截止期限，
+上面提出的原则简单并且有通用型。而在实际部署策略时，如何设置流的截止期限，
 以及如何设计由$\alpha$和d作为参数的惩罚函数，可以根据具体的应用来确定。 
 在下一小节中，本文将根据这个原则开发一个具体的根据截止期限和网络拥塞函数进行拥塞控制的策略－正比负载差分策略。
 
@@ -304,7 +267,7 @@ $\frac{\partial^{2}{r}}{\partial{\alpha}\partial{d}} \ge 0$ （但是不能恒�
 \label{sec_LPD:LPD}
 
 \subsection{正比负载差分策略(LPD)}
-作为”越拥塞，越区分”原则的一个应用，我们提出了下面的基于期限的拥塞控制算法：
+作为”越拥塞，越区分”原则的一个应用，可以提出下面基于期限的拥塞控制算法：
 \begin{equation}
 w=
 \begin{cases}
@@ -316,16 +279,15 @@ w \times (1-f) &\text{出现拥塞}
 
 
 其中f=$\alpha$/d是惩罚函数，
-这个函数是根据网络负载$\alpha$和紧急因子d进行计算的，
-这个因子可以用来区分流的紧急程度。
+此函数是根据网络负载$\alpha$和紧急因子d进行计算的，因子可以用来区分流的紧急程度。
 拥塞程度（即网络拥塞负载因子$\alpha$）的含义和DCTCP以及D$^2$TCP中的相同\cite{DCTCP, D2TCP}。 
 由于f与$\alpha$成正比，所以我们称这个算法为正比负载差分策略（Load Proportional Differentiation，简称LPD ）。 
 
 定义一个简单的迫近因子d = $t_{max}/t$，
 其中t是流开始时间时刻和截止时刻之间的持续时间，
 $t_{max}$是t的可调上界，后面会有详细讨论。
-对于没有截至期限的流，t可以设置为$t_{max}$。 
-可见，t越小，d越大，因此流也越迫切。
+对于没有截止期限的流，t可以设置为$t_{max}$。 
+t越小，d越大，因此流也越迫切。
 基于此，可以得到LPD-t，一个根据网络拥塞和截止期限进行拥塞控制的策略：
 
 \begin{equation}
@@ -344,12 +306,10 @@ w \times (1-\alpha \times \frac{t}{t_{max}}) &\text{出现拥塞}
 如果网络中没有拥塞，那么拥塞窗口每个RTT增加$(1-f)$，
 如果发生拥塞，那么拥塞窗口减小f倍。
  
-\subsection{LPD分析}
-
-\subsubsection{LPD简单分析}
+\subsection{LPD简单分析}
 在类似TCP的方案中，通过调整拥塞窗口来间接的调整流的发送速率。
-因此，我们可以通过调整拥塞窗口的大小来调整发送速率。
-LPD-t是符合我们提出“越拥塞，越区分”的设计原则的，
+因此，可以通过调整拥塞窗口的大小来调整发送速率。
+LPD-t是符合本文提出“越拥塞，越区分”的设计原则的，
 引理\ref{theorem-LPD}对此进行了证明。
  
 \begin{lemma}\label{theorem-LPD}
@@ -369,17 +329,16 @@ $\frac{\partial^{2}{(1-f)}}{\partial{d}\partial{\alpha}}
 从几何角度来看LPD遵循PI和PD这两个原则。 
 由于f与$\alpha$成正比，
 所以（$\alpha$，f）的几何表示是一条穿过原点的直线，窗口变化服从线性规则。
-如果两条流有不同的期限因子d，那么两条数据流的惩罚函数f之间的差会随着$\alpha$的增大而增加。
-引理\ref{theorem-LPD_2}展示在两条流的场景下，
-LPD-t稳定速率与期限成反比。
+如果两条流有不同的期限因子d，则两条数据流的惩罚函数f之间的差会随着$\alpha$的增大而增大。
+引理\ref{theorem-LPD_2}展示在两条流的场景下，LPD-t稳定速率与期限成反比。
 
 
 \begin{lemma}\label{theorem-LPD_2}
 假设LPD-t可以使流收敛在一个稳定的状态，
 即拥塞窗口在一个固定的区间内稳定的波动，
 此时流有稳定的发送速率，并且计算出的拥塞程度趋于稳定状态。 
-如果$t\ll t_{max}$，其中t和$t_{max}$是在（\ref{LPD-t-eq}）中LPD-t使用的调整$t_{max}$参数。
-那么近似地，流达到的稳定速率与之对应的期限成反比。
+如果$t\ll t_{max}$，其中t和$t_{max}$是在（\ref{LPD-t-eq}）中LPD-t使用的调整$t_{max}$参数，
+则流达到的稳定速率与之对应的期限成反比。
 \end{lemma}
 
 
@@ -416,18 +375,106 @@ $W_{max}= N \times (1-\alpha \times \frac{t}{t_{max}})/(\alpha \times \frac{t}{t
 \end{figure}
 
 尽管LPD-t的稳定性还没有得到证实。
-实际上，流截止期限不能比$t_{max}$小得多，为了验证引理\ref{theorem-LPD_2}，进行以下验证： 
+实际上，流截止期限不能比$t_{max}$小太多。
+为了验证引理\ref{theorem-LPD_2}，进行以下验证： 
 启动两条均为100 MB的LPD-t长流，两条流的截止时间为$t_1$ = 5s，$t_2$ = 10s，设置$t_{max}$ = 50s。 
 图\ref{rate-analysis-fig}（a）描述了前800 ms流的带宽变化过程，
 可以看到，flow$_1$的带宽平均是670M/s，而flow$_2$的带宽平均是330M/s。
 图\ref{rate-analysis-fig}（b）描述了两条数据流实际带宽比率，可以发现$r_1/r_2 \approx t_2 / t_1$=2。
 
+\subsection{LPD拓展}
+对期限敏感的OLDI应用常为小的查询流设置期限。
+为了满足OLDI应用中有期限流的需求，扩展LPD-t，并考虑流大小。
+\begin{equation}\label{LPD-e-eq}
+f=\alpha \times \frac{t}{t_{max}} \times \frac{s}{s_{max}}
+\end{equation}
+其中，$s_{max}$是流大小的上界。
+这样，在链路带宽不足的场景下，小的数据流能获取更多的带宽，从而在截止时间（deadline）之前完成。
+ (\ref{LPD-e-eq})仍然保留了LPD的特性，称此为LPD-e。 
+ 在本文后面的实验中，默认使用LPD-e，如果本文使用其他的策略，将会有明确说明。
+ 可以注意到“越拥塞，越区分”的原则是通用的，因此可以使用其他的形式。
+本文选将在后面中讨论一些其他形式的拥塞控制策略，其它形式的策略也满足此原则。
+ 另一方面，LPD本身也可以使用剩余流大小进行拓展。
+ 
+ \section{基于 ECN 标记的流传输模型}
+本节介绍基于ECN标记的流模型。
+首先，本节对基于ECN标记的流模型的场景进行介绍。
+然后，本节介绍基于ECN标记的流模型，
+最后，本节根据基于ECN标记的流模型分析LPD的性能，
+得到LPD流模型，作为ECN标记的流模型的一个实例。
 
-\subsubsection{LPD流模型}
+\subsection{场景描述}
+传统TCP通过调整拥塞窗口来进行速率的控制，
+当网络不拥塞时，拥塞窗口每个RTT增加1 MSS，
+当网络中出现拥塞时，TCP拥塞窗口减半。
+通过对TCP滑动窗口的调整，TCP实现了对发送速率的控制。
+
+\begin{figure}[H] 
+  \centering
+  \includegraphics[width=0.9\columnwidth]{figures/others/model-process.pdf}
+  \caption{基于ECN标记的数据中心速率控制过程，交换机上设置阈值，当排队队列超过阈值后，进行标记，发送端根据被标记的数据包比例，动态调整发送窗口}
+  \label{model-process-fig}
+\end{figure}
+
+基于ECN标记的拥塞控制速率机制过程如图\ref{model-process-fig}所示：首先，发送端发送数据包给交换机，在交换机设置一个阈值，
+当交换机队列长度超过阈值后，超过交换机设置队列设置阈值的数据包会被标记CE（和TCP不同，TCP会丢包）。
+当接受端收到数据包后，检查数据包是否被标记CE，
+如果发送的数据包被标记CE，那么给发送端回复的ACK中标记ECN。
+发送端检查收到的ACK中被标记ECN的ACK的比例，以此来计算网络的拥塞程度$\alpha$，根据拥塞程度进行拥塞窗口的计算。
+
+当网络中没有拥塞时（此RTT时间内没有被标记的数据包），滑动窗口每个RTT增加$(1-f_1(\alpha))$，
+当网络中有拥塞时（此RTT时间内中有被标记的数据包），滑动窗口减小$f_2(\alpha)$倍。
+其中$f_1(\alpha)$和$f_2(\alpha)$是关于拥塞程度$\alpha$的函数。
+(\ref{Model-CA-eq})是基于ECN标记的拥塞避免阶段窗口变化的公式。
+
+\begin{equation}
+w=
+\begin{cases}
+w+(1-f_1(\alpha)) &\text{没有拥塞}\\
+w \times (1-f_2(\alpha)) &\text{出现拥塞}
+\end{cases}
+\label{Model-CA-eq}
+\end{equation}
+
+\subsection{基于ECN标记流模型}\label{cha:model:introduction}
+\begin{figure}[H] 
+  \centering
+  \includegraphics[width=0.9\columnwidth]{figures/others/senders.eps}
+  \caption{N个发送端发送数据给1个接收端}
+  \label{model-senders-fig}
+\end{figure}
+
+如图\ref{model-senders-fig}所示，假设N个发送端连接1个交换机，1个接收端连接在交换机上。
+N个发送端使用公式(\ref{Model-CA-eq})进行拥塞控制窗口的计算。
+交换机支持ECN标记，当交换机队列满足ECN标记条件时，发送到交换机的数据包会进行数据包标记。
+
+公式(\ref{fluid-model_window})$\sim$(\ref{fluid-model-q})是基于ECN标记的描述模型，
+其中(\ref{fluid-model_window})表示的是窗口变化过程，其中，第一部分$\frac{1-f_1(\alpha)}{R(t)}$描述的是窗口增加的过程，
+其中每个RTT窗口增加$1-f_1(\alpha)$。
+$\frac{w_i(t)f_2(\alpha)}{R(t)}p(t-R^*)$描述的是窗口减小的过程，当发生拥塞时，窗口减小$\frac{w_i(t)f_2(\alpha)}{R(t)}$。
+其中$p(t-R^*)$表示的是否出现ECN标记，当$p(t-R^*)=1$时，表示ACK中有ECN标记，当$p(t-R^*)=0$时，表示ACK中没有ECN标记，
+此时网络中没有拥塞。
+
+公式(\ref{fluid-model_queue})表示的是交换机队列变化，
+$ \sum_{i=1}^N{\frac{w_i(t)}{R(t)}}$表示的是发送到交换机的数据包，
+假设交换机的转发速率是C pkt/s，那么，交换机的队列长度是$\sum_{i=1}^N{\frac{w_i(t)}{R(t)}}-C \label{fluid-model_queue}$。
+
+公式(\ref{fluid-model-q})是交换机是否进行标记，当交换机队列满足一定条件$F({q}(t))==1$时，
+进行标记的函数$\widehat{p}(t)=1$，否则，$\widehat{p}(t)=0$。
+ \begin{align}
+&\frac{dw_i}{dt}=\frac{1-f_1(\alpha)}{R(t)}-\frac{w_i(t)f_2(\alpha)}{R(t)}p(t-R^*)  \label{fluid-model_window} \\
+&\frac{dq}{dt}= \sum_{i=1}^N{\frac{w_i(t)}{R(t)}}-C \label{fluid-model_queue}  \\
+&\widehat{p}(t)=1_{F({q}(t))==1}  \label{fluid-model-q}
+\end{align}
+
+
+
+
+\subsection{LPD流模型}
 假设N个并发的流通过容量为C pkts / sec的瓶颈链路传递给同一个接收者节点。
 设置（\ref{Model-CA-eq}）中$f_1(\alpha)=f_2(\alpha)=\alpha \times \frac{t}{t_{max}}$，
 同时把$f_1(\alpha)$和$f_2(\alpha)$带入(\ref{fluid-model_window})$\sim$(\ref{fluid-model-q})，
-并且改动(\ref{Model-alpha-eq})中数据包标记的方法，并且增加$\alpha$标记方法，那么LPD流模型可以描述为：
+并且增加$\alpha$标记方法，那么LPD流模型可以描述为：
 
 
  \begin{align}
@@ -488,12 +535,12 @@ q是交换队列长度，R表示RTT。
 从图\ref{rate-ratio-fig}（a）可以看出，当$t_{max} <100$时，流模型和ns-2仿真的结果都是$w_1 /w_2 \approx 2$。
 然而，当$t_{max}> 100$时，ns-2模拟的$w_1\approx w_2$和流模型的$w_1 /w_2 \approx  2$。
 图\ref{rate-ratio-fig}（b）表明当$t_{max}> 100$时，流模型会推算出较大的拥塞窗口。
-此表明，$t_{max}$在实际中应该被设置适当值，如何$t_{max}$，本章后续会进行更详细的讨论。
+此表明，$t_{max}$在实际中应该被设置适当值，下面讨论在实际中如何$t_{max}$。
 
 
 
 \subsubsection{$t_{max}$的选择}
-注意，在LPD流模型中，流具有不动点$(w_i,\alpha_i)=(t_{max}-t_i,1)$。
+在LPD流模型中，流具有不动点$(w_i,\alpha_i)=(t_{max}-t_i,1)$。
 不动点的实际意义是所有数据流的$\alpha= 1$。
 即重度拥塞的情形下，所有的数据包都被标记，所有流拥有固定的拥塞窗口。
 在LPD中，$t_{max}$应该选择适当的值。
@@ -520,7 +567,7 @@ q是交换队列长度，R表示RTT。
 t_{max}<\frac{t_1\times(K+C\times RTT+2N)}{N}
 \end{equation}
 
-根据(\ref{tmax})，我们可以根据截止期限的最大值，最大并发流量数量，
+根据(\ref{tmax})，可以根据截止期限的最大值，最大并发流量数量，
 RTT和瓶颈链路链接带宽来设置$t_{max}$。 
 在当前数据中心，设置C为10Gbps，数据包大小为1500B，RTT为100us，
 因为数据中心，大多数情况下并发连接数小于100 \cite{DCTCP}，假设设置K为60：
@@ -598,22 +645,6 @@ K \simeq 0.14 Cd
 为了测试上面的实验结果，图\ref{throughput-fig}显示ns-2仿真中吞吐量和标记阈值K的关系图。 
 在这个实验中，变换K的取值从4到30（大约是BDP的$2.4\% \sim18\%$）。 
 结果表明，ns-2仿真结果与LPD流模型相似，即使当K设置小于$3\%$倍的BDP时，吞吐量仍然高于$95\%$。 
-
-
-\subsection{LPD拓展}
-对期限敏感的OLDI应用常为小的查询流设置期限。
-为了满足OLDI应用中有期限数据流的需求，
-我们扩展LPD-t，并将流的大小考虑进去。
-\begin{equation}\label{LPD-e-eq}
-f=\alpha \times \frac{t}{t_{max}} \times \frac{s}{s_{max}}
-\end{equation}
-其中，$s_{max}$是流大小的上界。
-这样，在链路带宽不足的场景下，小的数据流能获取更多的带宽，从而在截止时间（deadline）之前完成。
- (\ref{LPD-e-eq})仍然保留了LPD的特性，称此为LPD-e。 
- 在本文后面的实验中，默认使用LPD-e，如果本文使用其他的策略，将会有明确说明。
- 可以注意到“越拥塞，越区分”的原则是通用的，因此可以使用其他的形式。
-本文选择仅仅因简单性而提出LPD，并将在后面中讨论一些其他形式的拥塞控制策略，其它形式的策略也满足此原则。
- 另一方面，LPD本身也可以使用剩余流大小进行拓展。
  
 \section{实验验证}\label{LPDevaluation}
 本节通过ns-2 \cite{ns2}仿真和实际测试床来评估LPD的性能。 
@@ -624,34 +655,37 @@ f=\alpha \times \frac{t}{t_{max}} \times \frac{s}{s_{max}}
 同时本文的实验也在Linux内核3.2.61中实现了LPD，D$^2$TCP，L$^2$DCT，
 并在真实环境上作评估，相应的源代码可以在LPD内核代码网站\cite{LPD-code}下载。
 
-\subsection{解决研究动机提出的问题}
+\subsection{LPD重度负载下性能验证}
 
+%
 \begin{figure}[h]
+\setlength{\abovecaptionskip}{0pt} 
+\setlength{\belowcaptionskip}{1pt} 
   \centering%
-  \subcaptionbox{流的带宽\label{LPD_Evaluation_Motivation:subfig1}} %标题的长度，超过则会换行，如下一个小图。
-    {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_bandwidth2.eps}}%
+  \subcaptionbox{流的带宽\label{LPD_Evaluation_Motivation:subfig1}} 
+    {\includegraphics[width=0.45\columnwidth]{figures/LPD/evaluation_1/LPD_bandwidth2.eps}\quad}
   \subcaptionbox{拥塞窗口\label{LPD_Evaluation_Motivation:subfig2}}
-      {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_window2.eps}}
-  \subcaptionbox{flow$_1$和flow$_4$的期限因子\label{LPD_Evaluation_Motivation:subfig3}}%标题的长度，超过则会换行，如下一个小图。
-    {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_factor2.eps}}%
-  %\hspace{7em}%
+      {\includegraphics[width=0.45\columnwidth]{figures/LPD/evaluation_1/LPD_window2.eps}\quad}
+  \subcaptionbox{flow$_1$和flow$_4$的期限因子\label{LPD_Evaluation_Motivation:subfig3}}
+    {\includegraphics[width=0.45\columnwidth]{figures/LPD/evaluation_1/LPD_factor2.eps}\quad}
   \subcaptionbox{flow$_1$和flow$_4$的拥塞程度\label{LPD_Evaluation_Motivation:subfig4}}
-      {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_alpha2.eps}}
+      {\includegraphics[width=0.45\columnwidth]{figures/LPD/evaluation_1/LPD_alpha2.eps}\quad}
   \caption{LPD下4条流的性能,使用和 D$^{2}$TCP相同的参数}
   \label{evalution_cases_principle_fig}
 \end{figure}
 
 
+
 \begin{figure}[h]
-  \centering%
-  \subcaptionbox{流的带宽\label{LPD_Motivation:subfig3}} %标题的长度，超过则会换行，如下一个小图。
-    {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_bandwidth.eps}}%
-  \subcaptionbox{拥塞窗口\label{LPD_Motivation:subfig4}}
+\setlength{\abovecaptionskip}{0pt} 
+\setlength{\belowcaptionskip}{1pt} 
+  \subcaptionbox{流的带宽\label{LPD_Motivation:subfig3}} [0.5\linewidth]  
+    {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_bandwidth.eps}}
+  \subcaptionbox{拥塞窗口\label{LPD_Motivation:subfig4}}[0.5\linewidth]  
       {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_window.eps}}
-  \subcaptionbox{交换机队列长度\label{LPD_Motivation:subfig5}}%标题的长度，超过则会换行，如下一个小图。
-    {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_queue.eps}}%
-  %\hspace{7em}%
-  \subcaptionbox{flow$_1$和flow$_4$的拥塞因子\label{LPD_Motivation:subfig6}}
+  \subcaptionbox{交换机队列长度\label{LPD_Motivation:subfig5}}[0.5\linewidth]  
+    {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_queue.eps}}
+  \subcaptionbox{flow$_1$和flow$_4$的拥塞因子\label{LPD_Motivation:subfig6}}[0.5\linewidth]  
       {\includegraphics[width=0.5\columnwidth]{figures/LPD/evaluation_1/LPD_alpha.eps}}
   \caption{LPD-t下4条流的性能,使用和 D$^{2}$TCP相同的参数}
   \label{evalution_cases_fig}
@@ -718,7 +752,7 @@ LPD-t和LPD-e必须设置适当的上限$t_{max}$和$s_{max}$。
 LPD-t的性能总是比D$^2$TCP优异（D$^2$TCP在扇入度分别是20，30和40时错过期限的比例分别为$3.45\%$，$4.96\%$和$5.45\%$）。
 而且在这个范围内，使用不同$t_{max}$，LPD的性能差异较大。
 然而，当$t_{max}$很大时，例如，当$t_{max}>$120ms（即6倍于截止期限）时，
-LPD-t的性能受到极大的损害，并且比D$^2$TCP差。
+LPD-t的性能较差，并且比D$^2$TCP差，这和之前推倒结果相符。
 
 
 \subsection{仿真测试}
@@ -731,13 +765,12 @@ LPD-t的性能受到极大的损害，并且比D$^2$TCP差。
 \label{DataCenterTop-fig}
 \end{figure}
 
-为了测试在数据中心下LPD-e的性能，如图\ref{DataCenterTop-fig}所示，我们构建了一个三级树形拓扑。
-在这个拓扑中，我们构建10个机架，每个机架由M = 40个服务器组成，机架连接到顶层的TOR交换机。
+为了测试在数据中心下LPD-e的性能，构建一个如图\ref{DataCenterTop-fig}所示的三级树形拓扑。
+这个拓扑有10个机架，每个机架由M = 40个服务器组成，机架连接到顶层的TOR交换机。
 服务器和交换机之间的链路带宽为1Gbps。
 所有TOR交换机通过10Gbps链路连接到根交换机。
-在ns-2中构建这种三级树形拓扑，在这个中等数据中心拓扑下，我们评估LPD-e的性能。
 
-和之前工作\cite{DCTCP,D2TCP,L2DCT}类似，设置交换机的标记阈值K=20，并将传播延迟d设置为100us。 
+和\inlinecite{DCTCP,D2TCP,L2DCT}类似，设置交换机的标记阈值K=20，并将传播延迟d设置为100us。 
 TCP重新传输超时（RTO）设置为10ms，每个发送端初始拥塞窗口设置为12。
 考虑在数据中心内，很多大小是200 KB以内的数据流是有期限的，因此设置$s_{max}$ = 200KB。
 假设流的大小遵循Pareto分布，Pareto参数为1.2，流的平均大小为50KB。
@@ -836,7 +869,7 @@ TCP重新传输超时（RTO）设置为10ms，每个发送端初始拥塞窗口�
 \end{figure}
 
 为了展示LPD如何在复杂的数据中心拓扑结构下的性能，
-以及LPD在真实流量下的性能，我们在ns-2模拟器中构建了spine-leaf拓扑，拓扑结构如图\ref{DataCenterspineleaf-fig}所示。
+以及LPD在真实流量下的性能，在ns-2模拟器中构建了spine-leaf拓扑，拓扑结构如图\ref{DataCenterspineleaf-fig}所示。
 在构建的拓扑中，共有144个服务器连接到9个叶子交换机，这9个叶子交换机连接4个主干交换机。
 通过主干交换机（4跳）的端到端往返延迟是14.6 us，叶交换机（2跳）的端到端往返延迟是13.3 us。
 在这些延迟中，10us的时间是在端节点上，这模拟的是像hadoop这类应用的计算时间。 
@@ -872,9 +905,9 @@ K＝64，设置$s_{max}$的默认值是1MB，$t_{max}$=30ms。
 \end{figure}
 
 
-本文在实验中使用两个世纪数据中心应用的流量：网络搜索（web search)和数据挖掘(data mining)\cite{DCTCP,pFabric}。
+本文在实验中使用两个实际数据中心应用的流量：网络搜索（web search)和数据挖掘(data mining)\cite{DCTCP,pFabric}。
 在网络搜索流中，$70\%$的流小于1 MB，超过$50\%$的流在100 KB到1 MB之间。
-在数据挖掘流中，超过$80\%$的流是小于10KB的小流，大于1MB的$4\%$的大流占据超过$90\%$的数据量。
+在数据挖掘流中，超过$80\%$数目的流是小于10KB的小流，大于1MB的长流数目约为$4\%$，长流超过$90\%$的数据量。
 在本部分的仿真中，假设数据流的到达服从泊松分布。 
 流的源和目标服务器是随机选择的，并且服从均匀分布。
 流到达的时间间隔不同，会产生不同程度的网络负载。
@@ -903,7 +936,7 @@ K＝64，设置$s_{max}$的默认值是1MB，$t_{max}$=30ms。
 这是因为随着超额认购因子变大，网络负载变大，
 LPD的惩罚函数比D$^2$TCP和L$^2$DCT的gamma校正函数性能更好，因此流错失期限的比例更小。
 Karuna，当前最先进的基于期限的拥塞控制方法，有不到$1\%$的流错失期限。
-然而，当网络的负载变重（负载= 0.9，x = 10）时，LPD表现比卡Karuna好。
+然而，当网络的负载变重（负载= 0.9，x = 10）时，LPD表现比Karuna好。
 这是因为，当网络负载加重时，使用LPD，不同截止期限的流的拥塞窗口差异更大。
 使用数据挖掘应用的结果与之类似，结果如图\ref{miss-spine-data-fig}所示。
 
@@ -948,17 +981,17 @@ Karuna，当前最先进的基于期限的拥塞控制方法，有不到$1\%$的
 
 
 “越拥塞，越区分”的原则也可以用于其他目标的优化，比如流平均完成时间（Average Flow Completion Time，简称AFCT）。
-改动LPD，并且设置惩罚函数为$f = s / s_{max}$，我们可以得到优化流平均完成时间的策略LPD-s。
-在LPD-s中，s可以是流大小或剩余流大小。
-在后续实验中，默认s为流大小，并设置$s_{max} = 1MB$。
-对于大于1 MB的流，设置其s = 1MB。
+改动LPD，并且设置惩罚函数为$f = s / s_{max}$，得到优化流平均完成时间的策略LPD-s。
+在LPD-s中，s设置为流大小或剩余流大小。
+在后续实验中，默认s设置为流大小，并设置$s_{max} = 1MB$。
+对于大于1 MB的流，设置s = 1MB。
 对于小于10KB的流，设置s＝10KB。
 假设N = 1，根据(\ref{tmax})，
 LPD-s的流大小调整区域是[10KB，1MB]。
 设置超额订购因子x = 5，图\ref{fct-spine-search-5-fig}显示了网络搜索应用下的流平均完成时间结果。
 
 
-从图\ref{fct-spine-search-5-fig}可以看出，LPD-s和L$^2$DCT均比DCTCP的平均流完成时间都小，但性能不如pFabric。
+从图\ref{fct-spine-search-5-fig}可以看出，LPD-s和L$^2$DCT均比DCTCP的平均流完成时间都小，但性能不及pFabric。
 图\ref{fct-spine-search-5-fig}（a）表明，对于网络负载较轻的场景（load<0.5），LPD-s的性能是DCTCP的3$\times$，大约是L$^2$DCT的$10\%$。
 但当网络拥塞很重（load> 0.5）时，LPD-s性能分别比DCTCP和L$^2$DCT提高5$\times$和15$\%$。
 图\ref{fct-spine-search-5-fig}（b）显示的是流大小大于500 KB的实验结果。
@@ -976,7 +1009,7 @@ LPD-s的流大小调整区域是[10KB，1MB]。
 对于每组实验，将网络负载从0.1改变到0.9，图\ref{fct-spine-fct-factor-fig}显示了平均流完成时间和流完成时间的最大值以及每组的最小值。
 可以观察到超额认购因子比较小（x= 5）时，LPD的平均流完成时间与L$^2$DCT相比下降了$20\%$。
 但是，当网络的超额认购因子较大时，LPD的性能比L$^2$DCT提高1$\times$。
-这个结果表明在网络拥塞重的情形下LPD是一个比较好的策略。
+这个结果表明在网络拥塞重的情形下LPD是更优策略。
 
 
 \subsection{真实环境下测试}
@@ -1007,7 +1040,7 @@ LPD对Linux内核3.2.61评估的主要代码可以在\cite{LPD-code}下载。
 
 \begin{figure}[H] 
   \centering
-  \includegraphics[width=0.7\columnwidth]{figures/LPD/realtopology.pdf}
+  \includegraphics[width=0.5\columnwidth]{figures/LPD/realtopology.pdf}
   \caption{小型数据中心测试床}
 \label{testbed-fig}
 \end{figure}
@@ -1131,7 +1164,7 @@ $$ f=\left\{
 图\ref{discussion-fig}显示不同形式的算法的差异性不大，
 策略能够在网络拥塞程度重的情形下使的期限不同的数据流。
 
-\subsection{使用剩余时间}
+\subsection{使用其他属性}
 
 在\ref{sec_LPD:LPD}节中提出LPD-e，使用流程开始时间和截止期限之间的时间间隔。
 因为，减少流错失期限的最优策略是最小期限优先策略。 

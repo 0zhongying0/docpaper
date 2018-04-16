@@ -436,31 +436,8 @@ FUNCTION {format.url}
   if$
 }
 
-FUNCTION {is.doi.in.url}
-{ url empty$
-    { #0 }
-    { doi text.length$ 'stringlength :=
-      url text.length$ 'charptr :=
-        { url charptr stringlength substring$ doi = not
-          charptr #0 >
-          and
-        }
-        { charptr #1 - 'charptr := }
-      while$
-      charptr
-    }
-  if$
-}
-
 FUNCTION {format.doi}
-{ doi empty$
-    { "" }
-    { is.doi.in.url
-        { "" }
-        { new.block "\doi{" doi * "}" * }
-      if$
-    }
-  if$
+{ ""
 }
 
 FUNCTION {format.title}
@@ -873,7 +850,7 @@ FUNCTION {format.edition}
 FUNCTION {format.sine.loco}
 { is.in.chinese
     { "[出版地不详]" }
-    { "" }
+    { "[S.l.]" }
   if$
 }
 
@@ -883,7 +860,7 @@ FUNCTION {format.address}
 FUNCTION {format.sine.nomine}
 { is.in.chinese
     { "[出版地不详]" }
-    { "[]" }
+    { "[s.n.]" }
   if$
 }
 
@@ -909,7 +886,7 @@ FUNCTION {format.publisher}
 FUNCTION {format.sine.loco.sine.nomine}
 { is.in.chinese
     { "[出版地不详: 出版者不详]" }
-    { "" }
+    { "[S.l.: s.n.]" }
   if$
 }
 

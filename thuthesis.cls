@@ -23,10 +23,10 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{thuthesis}
-[2017/12/18 5.4.2 Tsinghua University Thesis Template]
+[2017/12/24 5.4.3 Tsinghua University Thesis Template]
 \hyphenation{Thu-Thesis}
 \def\thuthesis{\textsc{ThuThesis}}
-\def\version{5.4.2}
+\def\version{5.4.3}
 
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
